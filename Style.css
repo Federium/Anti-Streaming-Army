@@ -2,6 +2,15 @@
   font-family: "TronicaMono";
   src: url("Font/TronicaMono.ttf") format("truetype");
 }
+@font-face {
+  font-family: "nsa-encrypted";
+  src: url("Font/nsa-encrypted.ttf") format("truetype");
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
 
 html,
 body {
@@ -56,7 +65,7 @@ table {
 .main-header {
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem 2rem;
   list-style: none;
 }
 
@@ -68,15 +77,14 @@ table {
   color: #ffffff;
   text-decoration: none;
   font-size: 24px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   display: inline-block;
-  transition: all 0.3s ease;
 }
 
-.logo a:hover {
+/* .logo a:hover {
   background-color: #ffffff;
   color: #000000;
-}
+} */
 
 .spazio {
   color: transparent;
@@ -91,7 +99,7 @@ table {
 
 .nav-menu ul {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -100,7 +108,7 @@ table {
 .nav-menu a {
   color: #ffffff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.2rem;
 }
 
 .nav-menu a:hover {
@@ -110,18 +118,14 @@ table {
 
 .file-path {
   color: #ffffff;
-  font-family: "TronicaMono";
   letter-spacing: 0.1rem;
-  padding: 1rem 3.2rem;
-}
-
-/* Fissa il file-path nella parte superiore */
-.file-path {
+  padding: 1rem 2.5rem; /* Aggiungi padding laterale */
   position: sticky;
   top: 0;
   width: 100%;
   background-color: #000000;
   z-index: 1000;
+  box-sizing: border-box; /* Include padding nella larghezza */
 }
 
 .file-path span {
@@ -184,25 +188,24 @@ table {
   align-items: center; /* centra verticalmente */
   height: 100%; /* assicura che prenda tutto lo spazio disponibile */
   width: 100%;
-  padding-top: 14rem;
+  padding-top: 0rem;
 }
 
 .archive table {
-  width: 80%; /* imposta una larghezza adeguata per la tabella */
+  width: 100%; /* imposta una larghezza adeguata per la tabella */
   border-collapse: collapse;
-  margin: 2rem 0;
-  font-family: "TronicaMono";
-  color: #ffffff;
+  margin: 2rem 0rem 0rem 0rem;
+  text-transform: uppercase;
 }
 
 .archive th,
 .archive td {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2.5rem;
   text-align: left;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 0.5px solid #ffffff;
 }
 
-.archive tr:hover {
+.archive tbody tr:hover {
   background-color: #ffffff;
   color: #000000;
 }
@@ -212,13 +215,65 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* allinea il contenuto in basso */
+  padding: 0;
+}
+
+/* ------------------------- ARCHIVE PAGE ------------------------- */
+/* ------------------------- ARCHIVE PAGE ------------------------- */
+/* ------------------------- ARCHIVE PAGE ------------------------- */
+
+.selected-row {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.selected-row table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "TronicaMono";
+  color: #ffffff;
+}
+
+.selected-row th,
+.selected-row td {
+  padding: 0.5rem 2.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+
+.main-content-archive-page {
+  width: 100%;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+.main-content-archive-page h1 {
+  font-family: nsa-encrypted;
+  font-size: 18px;
+  line-height: 35px;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  margin: 0rem 0rem 2.5rem 0rem;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.column {
+  width: 48%;
+  color: #ffffff;
+  line-height: 1.2rem;
 }
 
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */
 
-.main-content {
+.main-content-decrypta {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,6 +281,7 @@ table {
   height: 100vh;
   text-align: center;
   padding: 8rem;
+  flex: 1; /* occupa tutto lo spazio disponibile */
 }
 
 .center-content {
