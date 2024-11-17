@@ -1,0 +1,32 @@
+/* Preloader Styles */
+@font-face {
+  font-family: "TronicaMono";
+  src: url("Font/TronicaMono.ttf") format("truetype");
+}
+
+html, body {
+  height: 100%;
+  background-color: #000000;
+}
+
+
+.preloader {
+  color: #ffffff;
+  font-family: "TronicaMono", monospace;
+  font-size: 14px;
+}
+
+.terminal {
+  text-align: left;
+  color: #ffffff;
+}
+
+#terminal-content {
+  white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+.loading-text {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
