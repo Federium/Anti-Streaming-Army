@@ -31,19 +31,18 @@
         'root@asa:~$ access granted.'
       ];
 
-      // Intervalli diversi per ogni riga (in millisecondi)
       const delays = [
         1200,    // initiating
-        300,   // connecting
-        100,   // python script
-        150,   // processing
-        300,   // bypassing
-        1000,   // executing
-        100,   // infiltrating
-        100,   // accessing
-        100,   // compiling
-        200,   // connection
-        800     // access
+        300,     // connecting
+        100,     // python script
+        150,     // processing
+        300,     // bypassing
+        1000,    // executing
+        100,     // infiltrating
+        100,     // accessing
+        100,     // compiling
+        200,     // connection
+        800      // access
       ];
 
       let lineIndex = 0;
@@ -55,7 +54,8 @@
           setTimeout(displayLines, delays[lineIndex - 1]);
         } else {
           setTimeout(() => {
-            window.location.href = 'main.html';
+            // Usa il percorso relativo al repository
+            window.location.href = './main.html'; // oppure '/nome-repository/Main.html'
           }, 1000);
         }
       }
