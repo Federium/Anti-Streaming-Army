@@ -20,6 +20,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000;
+  text-transform: uppercase;
 }
 
 body {
@@ -126,6 +127,7 @@ table {
   background-color: #000000;
   z-index: 1000;
   box-sizing: border-box; /* Include padding nella larghezza */
+  text-transform: lowercase;
 }
 
 .file-path span {
@@ -195,7 +197,6 @@ table {
   width: 100%; /* imposta una larghezza adeguata per la tabella */
   border-collapse: collapse;
   margin: 2rem 0rem 0rem 0rem;
-  text-transform: uppercase;
 }
 
 .archive th,
