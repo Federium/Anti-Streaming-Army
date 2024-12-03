@@ -1,6 +1,6 @@
 @font-face {
   font-family: "TronicaMono";
-  src: url("Font/TronicaMono.ttf") format("truetype");
+  src: url("Font/TronicaMono.ttf");
 }
 @font-face {
   font-family: "nsa-encrypted";
@@ -38,25 +38,27 @@ h3 {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 14px;
   letter-spacing: 0.5rem;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 0.3rem;
 }
 
 h3 {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3rem;
 }
 
 span,
 p,
-table {
+table, a {
   font-size: 14px;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
 /* ------------------------- HEADER ------------------------- */
@@ -64,21 +66,25 @@ table {
 /* ------------------------- HEADER ------------------------- */
 
 .main-header {
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  list-style: none;
+  width: 18%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000000;
+  box-sizing: border-box;
+  padding: 2rem;
+  z-index: 1000;
 }
 
 .logo {
-  flex: 0 0 auto;
+  display: flex;
+  height: 4rem;
 }
 
 .logo a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0.5rem 0.5rem;
   display: inline-block;
 }
 
@@ -87,15 +93,10 @@ table {
   color: #000000;
 } */
 
-.spazio {
-  color: transparent;
-  font-size: 24px;
-}
-
 .nav-menu {
   flex: 1; /* prende tutto lo spazio rimanente */
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .nav-menu ul {
@@ -103,6 +104,12 @@ table {
   gap: 4rem;
   margin: 0;
   padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -112,37 +119,45 @@ table {
   padding: 0.2rem 0.2rem;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
   background-color: #ffffff;
   color: #000000;
 }
 
 .file-path {
-  color: #ffffff;
   letter-spacing: 0.1rem;
-  padding: 1rem 2.5rem; /* Aggiungi padding laterale */
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: #000000;
-  z-index: 1000;
+  padding: 0.5rem; /* Aggiungi padding laterale */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 9999;
   box-sizing: border-box; /* Include padding nella larghezza */
   text-transform: lowercase;
 }
 
 .file-path span {
-  opacity: 0.7; /* per un effetto più sottile */
+  color: #000000;
 }
 
 /* ------------------------- HOME ------------------------- */
 /* ------------------------- HOME ------------------------- */
 /* ------------------------- HOME ------------------------- */
 
+.main-content {
+  width: 82%;
+  margin-left: calc(18%); /* allineamento con l'header */
+  box-sizing: border-box;
+  padding: 6rem 2rem 2rem 2rem;
+  justify-content: flex-start;
+}
+
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
   gap: 1rem; /* spazio tra gli elementi */
   height: 80vh;
   color: #ffffff;
@@ -154,7 +169,6 @@ table {
 }
 
 .home h2 {
-  font-size: 18px;
   letter-spacing: 0.3rem;
 }
 
@@ -166,18 +180,22 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 16rem 8rem 16rem;
-  gap: 1rem; /* spazio tra gli elementi */
-  height: 80vh;
+  gap: 0rem; /* spazio tra gli elementi */
   color: #ffffff;
+  padding: 0rem 12rem 0rem 12rem;
 }
 
 .manifest h1 {
   margin: 0;
 }
 .manifest p {
-  opacity: 0.7;
-  line-height: 2; /* aumenta spazio tra le righe */
+  line-height: 1.5; /* aumenta spazio tra le righe */
+}
+
+.manifest br {
+  content: "";
+  display: block;
+  margin: 1rem 0; /* spazio dopo ogni <br> */
 }
 
 /* ------------------------- ARCHIVE ------------------------- */
@@ -187,23 +205,31 @@ table {
 .archive {
   display: flex;
   justify-content: center; /* centra orizzontalmente */
-  align-items: center; /* centra verticalmente */
+  align-items: flex-start; /* centra verticalmente */
   height: 100%; /* assicura che prenda tutto lo spazio disponibile */
   width: 100%;
-  padding-top: 0rem;
+  padding-top: 6rem;
 }
 
 .archive table {
   width: 100%; /* imposta una larghezza adeguata per la tabella */
   border-collapse: collapse;
-  margin: 2rem 0rem 0rem 0rem;
 }
 
-.archive th,
+.archive th{
+  padding: 0rem 2.5rem 0.5rem 2.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 100;
+  font-size: 14px;
+}
+
 .archive td {
   padding: 0.5rem 2.5rem;
   text-align: left;
   border-bottom: 0.5px solid #ffffff;
+  font-weight: 100;
+  font-size: 14px;
 }
 
 .archive tbody tr:hover {
@@ -211,12 +237,14 @@ table {
   color: #000000;
 }
 
-.main-content {
+.main-content-archive {
   flex: 1; /* occupa tutto lo spazio disponibile */
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* allinea il contenuto in basso */
   padding: 0;
+  flex: 1;
+  margin-left: 18%; /* stessa larghezza dell'header */
 }
 
 /* ------------------------- ARCHIVE PAGE ------------------------- */
@@ -340,4 +368,11 @@ table {
 .svg-table img {
   max-width: 100%;
   height: auto;
+}
+
+/* Layout principale */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
 }
