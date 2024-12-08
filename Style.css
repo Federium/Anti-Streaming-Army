@@ -3,8 +3,8 @@
   src: url("Font/TronicaMono.ttf");
 }
 @font-face {
-  font-family: "nsa-encrypted";
-  src: url("Font/nsa-encrypted.ttf") format("truetype");
+  font-family: "Decrypta-regular";
+  src: url("Font/Decrypta-Regular.ttf") format("truetype");
 }
 
 ::selection {
@@ -39,17 +39,17 @@ h3 {
 
 h1 {
   font-size: 14px;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0rem;
 }
 
 h2 {
   font-size: 14px;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0rem;
 }
 
 h3 {
   font-size: 14px;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0rem;
 }
 
 span,
@@ -64,6 +64,10 @@ table, a {
 /* ------------------------- HEADER ------------------------- */
 /* ------------------------- HEADER ------------------------- */
 /* ------------------------- HEADER ------------------------- */
+
+.menu-toggle {
+  display: none;
+}
 
 .main-header {
   width: 18%;
@@ -158,18 +162,14 @@ table, a {
   font-size: 14px;
 }
 
-.header-info span {
-  opacity: 0.7;
-}
-
 .header-info-title {
   color: #ffffff;
   font-size: 14px;
   text-align: left;
-  padding: 1rem 0rem 2rem 0rem;
-  margin: 2rem 0;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  padding: 1rem 0rem 0rem 0rem;
+  margin: 1rem 0;
+  /* border-top: 2px dashed #ffffff;
+  border-bottom: 2px dashed #ffffff; */
 }
 
 /* ------------------------- HOME ------------------------- */
@@ -212,9 +212,9 @@ table, a {
   align-items: center;
   gap: 0rem; /* spazio tra gli elementi */
   color: #ffffff;
-  padding: 2rem;
   height: 100%;
   box-sizing: border-box;
+  padding: 0rem 15rem 0rem 15rem;
 }
 
 .manifest h1 {
@@ -249,18 +249,15 @@ table, a {
 }
 
 .archive th{
-  padding: 0rem 2.5rem 0.5rem 2.5rem;
+  padding: 0rem 0.5rem 1.5rem 0.5rem;
   text-align: left;
-  border-bottom: 1px solid #ffffff;
   font-weight: 100;
   font-size: 14px;
 }
 
 .archive td {
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 0.5rem;
   text-align: left;
-  border-bottom: 0.5px solid #ffffff;
-  font-weight: 100;
   font-size: 14px;
 }
 
@@ -278,58 +275,98 @@ table, a {
   flex: 1;
   margin-left: 18%; /* stessa larghezza dell'header */
   padding-bottom: 2rem;
+  padding-right: 2rem;
 }
 
 /* ------------------------- ARCHIVE PAGE ------------------------- */
 /* ------------------------- ARCHIVE PAGE ------------------------- */
 /* ------------------------- ARCHIVE PAGE ------------------------- */
-
-.selected-row {
-  width: 100%;
-  margin: 2rem 0;
-}
-
-.selected-row table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "TronicaMono";
-  color: #ffffff;
-}
-
-.selected-row th,
-.selected-row td {
-  padding: 0.5rem 2.5rem;
-  text-align: left;
-  border-bottom: 1px solid #ffffff;
-}
-
-.main-content-archive-page {
-  width: 100%;
-  padding: 2.5rem;
-  box-sizing: border-box;
-}
-
-.main-content-archive-page h1 {
-  font-family: nsa-encrypted;
-  font-size: 18px;
-  line-height: 35px;
+.popup {
+  position: absolute;
   width: 75%;
+  height: 75%;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ffffff;
+  z-index: 10000;
   display: flex;
-  justify-content: center;
-  margin: 0rem 0rem 2.5rem 0rem;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-.columns {
+.popup-header {
+  height: 40px;
+  border-bottom: 1px solid #ffffff;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  align-items: center;
+  padding: 0 1rem;
+  cursor: move;
 }
 
-.column {
-  width: 48%;
-  color: #ffffff;
-  line-height: 1.2rem;
+.popup-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  word-wrap: break-word; /* Permette al testo di andare a capo */
+  overflow-wrap: break-word; /* Compatibilità aggiuntiva per il wrapping */
+  display: flex;
+  flex-direction: column; /* Disposizione verticale */
 }
+
+.close-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "TronicaMono";
+}
+
+/* _______________________________ */
+
+/* Stili per il contenuto del popup */
+.popup-content {
+    color: #ffffff; /* Testo bianco per contrasto */
+    padding: 1rem;
+    word-wrap: break-word; /* Permette al testo di andare a capo */
+    overflow-wrap: break-word; /* Compatibilità aggiuntiva per il wrapping */
+    display: flex;
+    flex-direction: column; /* Disposizione verticale */
+}
+
+/* Stili per il testo principale */
+.main-text p {
+    margin: 0.5rem 0;
+    word-break: break-word; /* Forza il break delle parole lunghe */
+    font-family: "Decrypta-regular";
+    font-size: 32px;
+    line-height: 1.5;
+    letter-spacing: 1rem;
+}
+
+/* Stili per il testo allineato a destra */
+.alphabet-index {
+    text-align: right; /* Allinea il testo a destra */
+    margin-top: 0.5rem; /* Spazio sopra */
+    font-size: 14px;
+    color: #ffffff; /* Colore del testo */
+}
+
+/* Stili per il blocco di testo aggiuntivo */
+.translated-text {
+    bottom: 0;
+    margin-top: auto; /* Spinge translated-text in fondo */
+    width: 50%;
+    line-height: normal;
+}
+
+.translated-text h3 {
+    margin-bottom: 0.5rem;
+}
+
+.translated-text p {
+    margin: 0;
+}
+
 
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */
@@ -383,7 +420,7 @@ table, a {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(100px, 1fr)
+    minmax(60px, 1fr)
   ); /* layout reattivo */
   gap: 1rem;
 }
@@ -406,80 +443,135 @@ table, a {
   width: 100%;
 }
 
-.window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px; /* dimensione fissa */
-  height: 600px; /* dimensione fissa */
-  background: rgba(0, 0, 0, 0.95);
-  border: 1px solid #ffffff;
-  z-index: 10000;
+
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  /* Layout changes */
+  .layout {
+    flex-direction: column;
+  }
+
+  /* Header modifications */
+  .main-header {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Logo adjustments */
+  .logo {
+    margin: 0;
+    height: 0;
+  }
+
+  /* Hide default navigation */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    z-index: 1000;
+    padding: 1rem;
+    width: 100% - 2rem;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    display: block;
+    height: 100vh;
+  }
+
+  .nav-menu a:hover, .nav-menu a.active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+
+  /* Index button */
+  .menu-toggle {
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-family: "TronicaMono";
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .menu-toggle:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: #000000;
+  }
+
+  /* Navigation items */
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-menu a {
+    display: block;
+    }
+
+  /* Main content adjustments */
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Header info section */
+  .header-info {
+    display: none;
+  }
+
+  /* File path adjustments */
+  .file-path {
+    display: none;
+  }
+
+
+/* -------------- MANIFESTO -------------- */
+/* -------------- MANIFESTO -------------- */
+/* -------------- MANIFESTO -------------- */
+
+.manifest {
   display: flex;
   flex-direction: column;
-}
-
-.window-header {
-  height: 40px;
-  border-bottom: 1px solid #ffffff;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  cursor: move;
-}
-
-.window-title {
+  gap: 0rem; /* spazio tra gli elementi */
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-family: "TronicaMono", monospace;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 0 5px;
-  transition: all 0.3s ease;
-}
-
-.close-button:hover {
-  color: #ffffff;
-}
-
-.window-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 2rem;
-  width: 100%;
-  height: calc(100% - 40px);
+  height: 100%;
   box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff #000000;
+  padding: 0rem 0rem 0rem 0rem;
 }
 
-.window-content::-webkit-scrollbar {
-  width: 6px;
+.manifest h1 {
+  margin: 0;
+}
+.manifest p {
+  line-height: 1.5; /* aumenta spazio tra le righe */
 }
 
-.window-content::-webkit-scrollbar-track {
-  background: #000000;
+.manifest br {
+  content: "";
+  display: block;
+  margin: 1rem 0; /* spazio dopo ogni <br> */
 }
 
-.window-content::-webkit-scrollbar-thumb {
-  background: #ffffff;
-}
 
-.ui-resizable-handle {
-  background-color: #ffffff;
-  opacity: 0.5;
-}
 
-.ui-resizable-handle:hover {
-  opacity: 1;
+
+
+
 }

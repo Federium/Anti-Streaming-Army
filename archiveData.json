@@ -1,0 +1,264 @@
+{
+  "Sheet1": [
+    {
+      "ID": "MSG-001",
+      "Timestamp": "6/12/18",
+      "Timestamp_1": "10:15 AM",
+      "Fonte": "Black Mirror S4E5",
+      "Piattaforma": "Deadflix",
+      "Frame": "12345",
+      "Risoluzione": "32x32",
+      "Categoria": "Ricerca"
+    },
+    {
+      "ID": "MSG-002",
+      "Timestamp": "6/12/18",
+      "Timestamp_1": "10:15 AM",
+      "Fonte": "Black Mirror S4E5",
+      "Piattaforma": "Deadflix",
+      "Frame": "12345",
+      "Risoluzione": "32x32",
+      "Categoria": "Ricerca"
+    },
+    {
+      "ID": "MSG-003",
+      "Timestamp": "10/5/18",
+      "Timestamp_1": "4:00 PM",
+      "Fonte": "Star Wars Rebels S3E12",
+      "Piattaforma": "Distopy+",
+      "Frame": "9876",
+      "Risoluzione": "16x16",
+      "Categoria": "Pianificazione"
+    },
+    {
+      "ID": "MSG-004",
+      "Timestamp": "10/5/18",
+      "Timestamp_1": "4:00 PM",
+      "Fonte": "Star Wars Rebels S3E12",
+      "Piattaforma": "Distopy+",
+      "Frame": "9876",
+      "Risoluzione": "16x16",
+      "Categoria": "Pianificazione"
+    },
+    {
+      "ID": "MSG-005",
+      "Timestamp": "1/21/19",
+      "Timestamp_1": "8:30 AM",
+      "Fonte": "The Man in the High Castle",
+      "Piattaforma": "Crime Video",
+      "Frame": "45678",
+      "Risoluzione": "64x64",
+      "Categoria": "Ricerca"
+    },
+    {
+      "ID": "MSG-006",
+      "Timestamp": "1/21/19",
+      "Timestamp_1": "8:30 AM",
+      "Fonte": "The Man in the High Castle",
+      "Piattaforma": "Crime Video",
+      "Frame": "45678",
+      "Risoluzione": "64x64",
+      "Categoria": "Ricerca"
+    },
+    {
+      "ID": "MSG-007",
+      "Timestamp": "4/11/19",
+      "Timestamp_1": "1:20 PM",
+      "Fonte": "Stranger Things S3E2",
+      "Piattaforma": "Deadflix",
+      "Frame": "19876",
+      "Risoluzione": "32x32",
+      "Categoria": "Sperimentazione"
+    },
+    {
+      "ID": "MSG-008",
+      "Timestamp": "4/11/19",
+      "Timestamp_1": "1:20 PM",
+      "Fonte": "Stranger Things S3E2",
+      "Piattaforma": "Deadflix",
+      "Frame": "19876",
+      "Risoluzione": "32x32",
+      "Categoria": "Sperimentazione"
+    },
+    {
+      "ID": "MSG-009",
+      "Timestamp": "7/23/19",
+      "Timestamp_1": "9:45 AM",
+      "Fonte": "Frozen",
+      "Piattaforma": "Distopy+",
+      "Frame": "25000",
+      "Risoluzione": "16x16",
+      "Categoria": "Pianificazione"
+    },
+    {
+      "ID": "MSG-010",
+      "Timestamp": "7/23/19",
+      "Timestamp_1": "9:45 AM",
+      "Fonte": "Frozen",
+      "Piattaforma": "Distopy+",
+      "Frame": "25000",
+      "Risoluzione": "16x16",
+      "Categoria": "Pianificazione"
+    },
+    {
+      "ID": "MSG-011",
+      "Timestamp": "10/15/19",
+      "Timestamp_1": "5:00 PM",
+      "Fonte": "Jack Ryan S2E5",
+      "Piattaforma": "Crime Video",
+      "Frame": "15678",
+      "Risoluzione": "64x64",
+      "Categoria": "Logistica"
+    },
+    {
+      "ID": "MSG-012",
+      "Timestamp": "10/15/19",
+      "Timestamp_1": "5:00 PM",
+      "Fonte": "Jack Ryan S2E5",
+      "Piattaforma": "Crime Video",
+      "Frame": "15678",
+      "Risoluzione": "64x64",
+      "Categoria": "Logistica"
+    },
+    {
+      "ID": "MSG-013",
+      "Timestamp": "12/10/19",
+      "Timestamp_1": "11:00 AM",
+      "Fonte": "The Mandalorian S1E8",
+      "Piattaforma": "Distopy+",
+      "Frame": "18452",
+      "Risoluzione": "32x32",
+      "Categoria": "Lancio"
+    },
+    {
+      "ID": "MSG-014",
+      "Timestamp": "1/15/20",
+      "Timestamp_1": "2:05 PM",
+      "Fonte": "Bird Box",
+      "Piattaforma": "Deadflix",
+      "Frame": "47812",
+      "Risoluzione": "32x32",
+      "Categoria": "Propaganda"
+    },
+    {
+      "ID": "MSG-015",
+      "Timestamp": "3/15/20",
+      "Timestamp_1": "3:30 PM",
+      "Fonte": "The Witcher S1E5",
+      "Piattaforma": "Deadflix",
+      "Frame": "92134",
+      "Risoluzione": "16x16",
+      "Categoria": "Strategia"
+    },
+    {
+      "ID": "MSG-016",
+      "Timestamp": "3/29/20",
+      "Timestamp_1": "9:45 AM",
+      "Fonte": "Frozen 2",
+      "Piattaforma": "Distopy+",
+      "Frame": "19284",
+      "Risoluzione": "16x16",
+      "Categoria": "Analisi"
+    },
+    {
+      "ID": "MSG-017",
+      "Timestamp": "5/1/20",
+      "Timestamp_1": "9:00 AM",
+      "Fonte": "Tales from the Loop S1E2",
+      "Piattaforma": "Crime Video",
+      "Frame": "48152",
+      "Risoluzione": "64x64",
+      "Categoria": "Monitoraggio"
+    },
+    {
+      "ID": "MSG-018",
+      "Timestamp": "7/20/20",
+      "Timestamp_1": "12:45 PM",
+      "Fonte": "Hamilton",
+      "Piattaforma": "Distopy+",
+      "Frame": "57438",
+      "Risoluzione": "32x32",
+      "Categoria": "PR"
+    },
+    {
+      "ID": "MSG-019",
+      "Timestamp": "11/15/20",
+      "Timestamp_1": "12:35 PM",
+      "Fonte": "The Crown S4E3",
+      "Piattaforma": "Deadflix",
+      "Frame": "10987",
+      "Risoluzione": "16x16",
+      "Categoria": "Analisi"
+    },
+    {
+      "ID": "MSG-020",
+      "Timestamp": "1/10/21",
+      "Timestamp_1": "8:15 AM",
+      "Fonte": "The Boys S2E7",
+      "Piattaforma": "Crime Video",
+      "Frame": "12356",
+      "Risoluzione": "16x16",
+      "Categoria": "Riprogettazione"
+    },
+    {
+      "ID": "MSG-021",
+      "Timestamp": "5/18/21",
+      "Timestamp_1": "2:00 PM",
+      "Fonte": "Luca",
+      "Piattaforma": "Distopy+",
+      "Frame": "78123",
+      "Risoluzione": "32x32",
+      "Categoria": "Innovazione"
+    },
+    {
+      "ID": "MSG-022",
+      "Timestamp": "6/15/21",
+      "Timestamp_1": "2:25 PM",
+      "Fonte": "The Tomorrow War",
+      "Piattaforma": "Crime Video",
+      "Frame": "50003",
+      "Risoluzione": "32x32",
+      "Categoria": "Ordini"
+    },
+    {
+      "ID": "MSG-023",
+      "Timestamp": "6/9/22",
+      "Timestamp_1": "10:15 AM",
+      "Fonte": "Stranger Things S4E9",
+      "Piattaforma": "Deadflix",
+      "Frame": "20581",
+      "Risoluzione": "32x32",
+      "Categoria": "Analisi"
+    },
+    {
+      "ID": "MSG-024",
+      "Timestamp": "9/10/22",
+      "Timestamp_1": "7:30 PM",
+      "Fonte": "Stranger Things S4E9",
+      "Piattaforma": "Deadflix",
+      "Frame": "54321",
+      "Risoluzione": "64x64",
+      "Categoria": "Manutenzione"
+    },
+    {
+      "ID": "MSG-025",
+      "Timestamp": "3/1/23",
+      "Timestamp_1": "4:30 PM",
+      "Fonte": "The Rings of Power S1E6",
+      "Piattaforma": "Crime Video",
+      "Frame": "23456",
+      "Risoluzione": "32x32",
+      "Categoria": "Conclusione"
+    },
+    {
+      "ID": "MSG-026",
+      "Timestamp": "7/1/23",
+      "Timestamp_1": "9:00 AM",
+      "Fonte": "The Mandalorian S3E8",
+      "Piattaforma": "Distopy+",
+      "Frame": "10012",
+      "Risoluzione": "64x64",
+      "Categoria": "Sperimentazioni"
+    }
+  ]
+}
