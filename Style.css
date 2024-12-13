@@ -391,7 +391,7 @@ table, a {
 }
 
 .main-image {
-  max-width: 70%;
+  max-width: 50%;
   height: auto;
 }
 
@@ -400,23 +400,21 @@ table, a {
   gap: 1rem;
   justify-content: space-between; /* allinea le immagini agli estremi */
   width: 100%; /* assicura che il contenitore prenda tutta la larghezza disponibile */
-  padding: 2rem 0;
 }
 
 .small-image {
   max-width: 45%;
-  min-width: 200px; /* imposta una larghezza minima */
   height: auto;
 }
 
-.center-text {
+.decrypta-text {
   text-align: left;
   line-height: 1.2;
+  width: 75%;
 }
 
 .svg-table {
   width: 100%;
-  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
@@ -569,8 +567,53 @@ table, a {
   margin: 1rem 0; /* spazio dopo ogni <br> */
 }
 
+/* -------------- ARCHIVE -------------- */
+/* -------------- ARCHIVE -------------- */
+/* -------------- ARCHIVE -------------- */
 
+ /* Archive table adjustments */
+ .archive {
+  padding-top: 2rem;
+  margin: 0;
+}
 
+.archive table {
+  width: 100%;
+}
+
+.main-content-archive {
+  margin: 0;
+  padding: 0rem 0.5rem;
+}
+
+/* Hide non-essential columns */
+.archive th:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(5)),
+.archive td:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(5)) {
+  display: none;
+}
+
+/* Style remaining columns */
+.archive th,
+.archive td {
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+/* Adjust column widths */
+.archive td:nth-child(1) { /* ID */
+  /* width: 25%; */
+}
+.archive td:nth-child(2) { /* DATE */
+/*   width: 35%;
+ */}
+.archive td:nth-child(5) { /* PLATFORM */
+/*   width: 40%;
+ */}
+
+/* Remove extra spacing */
+.archive tbody tr:last-child td {
+  border-bottom: none;
+}
 
 
 
