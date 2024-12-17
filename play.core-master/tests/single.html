@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>Test single</title>
+	<!-- <link rel="stylesheet" type="text/css" href="/css/simple_console.css"> -->
+	<style type="text/css" media="screen">
+    
+    @font-face {
+  font-family: "TronicaMono";
+  src: url("/TronicaMono-Regular.ttf") format("truetype");
+}
+
+		html, body {
+			padding: 0;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.2;
+			font-family: 'TronicaMono', monospace;
+      background-color: rgb(0, 0, 0);
+      color: rgb(42, 42, 42);
+		}
+		pre {
+			position: absolute;
+			margin:0;
+			padding:0;
+			left:0;
+			top:0;
+			width:100vw;
+			height:100vh;
+			font-family: 'TronicaMono', monospace;
+		}
+	</style>
+</head>
+<body>
+	<pre></pre>
+	<script type="module">
+		import { run } from '/play.core-master/src/run.js'
+		import * as program from '/play.core-master/src/programs/sdf/two_circles.js'
+		run(program, { element : document.querySelector('pre') }).then(function(e){
+			console.log(e)
+		}).catch(function(e) {
+			console.warn(e.message)
+			console.log(e.error)
+		})
+	</script>
+</body>
+</html>

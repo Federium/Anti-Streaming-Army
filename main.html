@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>A.S.A./Home</title>
     <link rel="stylesheet" href="Style.css" />
+    <!-- Add jQuery and script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
   </head>
 
   <body>
@@ -30,7 +34,7 @@
 
         <button class="menu-toggle">> INDEX</button>
 
-        <div class="header-info">
+<!--         <div class="header-info">
           <p class="header-info-title">INFECTION STATS <br> -</p>
           <ul>
             <li>10-11-2021</li>
@@ -47,18 +51,169 @@
             <li><span>INFECTED →</span> +20%</li>
             <li><span>PLATORM →</span> +80%</li>
           </ul>
-        </div>
+        </div> -->
 
       </header>
 
       <!-- Colonna destra -->
       <main class="main-content">
         <div class="home">
-          <h3>[ANTI_STREAMING_ARMY]</h3>
-          <h1>THE PANDEMIC WAS ORCHESTRATED.</h1>
+          <!-- <h3>[ANTI_STREAMING_ARMY]</h3>
+          <h1>THE PANDEMIC WAS ORCHESTRATED.</h1> -->
+          
+          <div class="text-sections">
+            <section class="text-block">
+              <p>The pandemic changed everything, but not by chance.</p>
+              <p>Behind the virus lies a plan, orchestrated to lock the world indoors and drive profit into the hands of streaming giants.</p>
+              <br>
+              <p>&nbsp;We are Anti_Streaming_Army.</p>
+              <br>
+              <p>&nbsp;&nbsp;We expose the truth they wanted to keep hidden.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="text-block">
+              <p>in 2019 THE DIGITAL CONTENT CONSORTIUM AND the Wuhan Institute of Virology start having unusual contacts.</p>
+              <br>
+              <p>we uncovered discussions about developing a virus designed to spread globally and force lockdowns.</p>
+              <div class="button-group">
+                <a href="#" class="link-button" data-id="CALLS">
+                  &nbsp;&nbsp;+-------------------+ <br>
+                  &nbsp;&nbsp;| open leaked calls | <br>
+                  &nbsp;&nbsp;+-------------------+                
+                </a>
+                <a href="#" class="link-button" data-id="DOCS">
+                  &nbsp;&nbsp;+-----------------------+ <br>
+                  &nbsp;&nbsp;| open leaked documents | <br>
+                  &nbsp;&nbsp;+-----------------------+                
+                </a>
+              </div>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="text-block">
+              <p>in 2020, The World Health Organization declares COVID-19 a global pandemic, Lockdowns are implemented ALL OVER THE WORLD.</p>
+              <br>
+              <p>As the world isolates, streaming platforms see a massive surge in users.</p>
+              <a href="#" class="link-button" data-id="GRAPHIC">
+                &nbsp;&nbsp;+-----------------------+ <br>
+                &nbsp;&nbsp;| open graphic evidence | <br>
+                &nbsp;&nbsp;+-----------------------+
+              </a>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="text-block">
+              <p>what they don't know is that we are watching them. STREAMING PLATFORMS USEd HIDDEN PIXEL PATTERNS inside their own contents to orchestrate the pandemic, in a secret way, or so they thought.</p>
+              <a href="Archive.html" class="link-button">
+                &nbsp;&nbsp;+---------------+ <br>
+                &nbsp;&nbsp;| go to archive | <br>
+                &nbsp;&nbsp;+---------------+
+              </a>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="text-block">
+              <p>anti_streaming_army shares with the world the truth about the pandemic.</p>
+              <a href="Decrypta.html" class="link-button">
+                &nbsp;&nbsp;+----------------+ <br>
+                &nbsp;&nbsp;| go to decrypta | <br>
+                &nbsp;&nbsp;+----------------+              
+              </a>
+            </section>
+          </div>
         </div>
       </main>
     </div>
+
+    <!-- Popup container -->
+    <div id="popup-container"></div>
+
+    <pre></pre>
+
+
+
+<!-- POPUP DATA -->
+ <!-- POPUP DATA -->
+  <!-- POPUP DATA -->
+
+<div id="ad-popup" class="popup" style="display: none;">
+    <div class="popup-header">
+        <span>data in the last 3 years</span>
+        <button class="close-button">[X]</button>
+    </div>
+    <div class="popup-content">
+        <p>
+          infected people: <br>
+          ----------------
+          <br>
+          200 million
+          <br>
+          <br>
+          platform subscriptions: <br>
+          -----------------------
+          <br>
+          800 million <br>
+
+        </p>
+    </div>
+</div>
+
+<script>
+let adPopupOffset = 0;
+
+function showAdPopup() {
+    if ($('#ad-popup').is(':visible')) {
+        return;
+    }
+
+    // Position popup randomly on screen
+    const maxX = window.innerWidth - 400;
+    const maxY = window.innerHeight - 300;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    $('#ad-popup')
+        .css({
+            position: 'fixed',
+            top: randomY + 'px',
+            left: randomX + 'px',
+            zIndex: 10000
+        })
+        .show()
+        .resizable();
+
+    // Close button functionality
+    $('#ad-popup .close-button').click(function() {
+        $('#ad-popup').hide();
+    });
+}
+
+// Show popup at random intervals between 15 and 30 seconds
+function scheduleNextPopup() {
+    const minDelay = 1000;  // 15 seconds
+    const maxDelay = 3000;  // 30 seconds
+    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+    
+    setTimeout(() => {
+        showAdPopup();
+        scheduleNextPopup();
+    }, randomDelay);
+}
+
+// Start the popup cycle when document is ready
+$(document).ready(function() {
+    scheduleNextPopup();
+});
+</script>
+
+
+
+
   </body>
 
   <script>
@@ -66,6 +221,66 @@
   document.querySelector('.nav-menu').classList.toggle('active');
 });
   </script>
+
+	<script type="module">
+		import { run } from '/play.core-master/src/run.js'
+		import * as program from '/play.core-master/src/programs/demos/chromaspiral.js'
+		run(program, { element : document.querySelector('pre') }).then(function(e){
+			console.log(e)
+		}).catch(function(e) {
+			console.warn(e.message)
+			console.log(e.error)
+		})
+	</script>
+
+
+<script>
+  let popupOffset = 0;
+
+  $(document).ready(function() {
+      $('.link-button[data-id]').click(function(e) {
+          e.preventDefault();
+          const id = $(this).data('id');
+          
+          if ($(`#popup-${id}`).length) {
+              return;
+          }
+
+          const popupContent = `
+              <div class="popup" id="popup-${id}">
+                  <div class="popup-header">
+                      <span>${id}</span>
+                      <button class="close-button">[X]</button>
+                  </div>
+                  <div class="popup-content">
+                      <!-- Content loaded from HTML file -->
+                  </div>
+              </div>
+          `;
+
+          $('#popup-container').append(popupContent);
+          const $popup = $(`#popup-${id}`);
+          $popup.draggable({
+              containment: "window" // Ensure popup stays within viewport
+          }).resizable();
+          
+          $popup.css({
+              top: 20 + popupOffset,
+              left: 20 + popupOffset
+          });
+
+          popupOffset += 20;
+
+          // Load content from HTML file
+          $popup.find('.popup-content').load(`mainPopups/popup-${id}.html`);
+
+          $(`#popup-${id} .close-button`).click(function() {
+              $(`#popup-${id}`).remove();
+              popupOffset -= 20;
+          });
+      });
+  });
+</script>
 
 
 </html>
