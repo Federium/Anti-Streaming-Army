@@ -16,7 +16,7 @@
         </div>
         
         <!-- Testo Allineato a Destra -->
-        <a href="#" class="link-button" data-id="ALPHABET">
+        <a href="#" class="alphabet-index" data-id="ALPHABET" style="text-decoration: none;">
             +---------------------+ <br>
             | open alphabet index | <br>
             +---------------------+          
@@ -38,7 +38,7 @@
     <script>
 
       $(document).ready(function() {
-          $('tr[data-id]').click(function() {
+          $('a[data-id]').click(function() {
               const id = $(this).data('id');
               console.log(`Clicked row with ID: ${id}`); // Debug
 

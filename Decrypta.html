@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>A.S.A./Decrypta</title>
     <link rel="stylesheet" href="Style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   </head>
 
   <body>
@@ -14,7 +16,7 @@
       <span>root@asa:~$ cd /antistreamingarmy/home</span>
     </div>
 
-    <div class="layout">
+
       <header class="main-header">
         <div class="logo">
           <a href="main.html">[ANTY_STREAMING_ARMY]</a>
@@ -53,58 +55,44 @@
 
       <main class="main-content">
 
-        <div class="center-content">
+
 
           <p class="decrypta-text">Decrypta: The key to their conspiracy. <br>
             <br>
-            they orchestrated pandemics. They forced you indoors.Their streams weren’t just entertainment—they were control.The truth was buried, frame by frame.
+            they orchestrated pandemics. They forced you indoors. Their streams weren’t just entertainment—they were control. The truth was buried, frame by frame.
             <br>
             <br>
-            Now, we’ve built the tool to expose them. Decrypta is their reckoning.Open source. No limits. No excuses.</p>
-
-          <img
-            src="SvgElements/Decrypta_1.svg"
-            alt="Main Image"
-            class="main-image"
-          />
-          <div class="small-images">
-            <img
-              src="SvgElements/Decrypta_2.svg"
-              alt="Small Image 1"
-              class="small-image"
-            />
-            <img
-              src="SvgElements/Decrypta_3.svg"
-              alt="Small Image 2"
-              class="small-image"
-            />
-          </div>
+            Now, we’ve built the tool to expose them. Decrypta is their reckoning. <br> Open source. No limits. No excuses.</p>
           <p class="decrypta-text">
             How it works
 Every frame has a secret. Every resolution hides their lies. Decrypta doesn't watch—it hunts.<br>
 <br>
 FEATURES: <br>
-> Navigate frame by frame to locate suspicious content. <br>
-> Adjust resolution dynamically to reveal hidden messages. <br>
-> Decode encrypted text with precision. <br>
-> Open-source design, hackable for any operation. <br>
+&nbsp;> Navigate frame by frame to locate suspicious content. <br>
+&nbsp;> Adjust resolution dynamically to reveal hidden messages. <br>
+&nbsp;> Decode encrypted message. <br>
+&nbsp;> Open-source design. <br>
 <br>
 GEAR UP: <br>
-GEAR: <br>
-> Arduino board <br>
-> Rotary encoder <br>
-> Potentiometer <br>
-> LCD display <br>
-> laser cut alluminium foil [files in the repo] <br>
+&nbsp;GEAR: <br>
+&nbsp;&nbsp;> Arduino board <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alert led <br>
+&nbsp;&nbsp;> Rotary encoder <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alert led <br>
+&nbsp;&nbsp;> Potentiometer <br>
+&nbsp;&nbsp;> USB Port <br>
+&nbsp;&nbsp;> ESC Button <br>
+&nbsp;&nbsp;> laser cut alluminium foil [files in the repo] <br>
 <br>
 CODE: <br>
-> Firmware: decrypta.ino <br>
-> Required libraries: [LINK] <br>
-> Optional testing tool: DecryptaSimDecode <br>
+&nbsp;> Firmware: decrypta.ino <br>
+&nbsp;> Required libraries: [LINK] <br>
+&nbsp;> Optional testing tool: DecryptaSimDecode <br>
 <br>
-Their secret language is no longer secret.The 9-pixel grid they thought was unbreakable is just noise now. <br>
+Their secret language is no longer secret. The 9-pixel grid they thought was unbreakable is just noise now. <br>
+<br>
 KEY: <br>
-[DECODING TABLE] <br>
+&nbsp;[view alphabet index] <br>
           </p>
           <div class="svg-table">
             <div>
@@ -264,13 +252,200 @@ KEY: <br>
               <img src="SvgElements/DecryptaFont/Group 103.svg" alt="Element 44" />
             </div>
           </div>
+
+
+          <div>
+            <p>
+              + Download the Decrypta firmware and libraries from the repository. + <br>
+              ---------------------------------------------------------------------
+              <br>
+            </p>
+
+            <div class="decrypta-file-container">
+              <a href="#" class="decrypta-file" data-id="DECRYPTA-01" style="text-decoration: none;">
+                +------------------+ <br>
+                | open arduino.ide | <br>
+                +------------------+          
+              </a>
+            <a href="#" class="decrypta-file" data-id="DECRYPTA-02" style="text-decoration: none;">
+              +---------------------+ <br>
+              | open arduino scheme | <br>
+              +---------------------+          
+          </a>
+          <a href="#" class="decrypta-file" data-id="DECRYPTA-03" style="text-decoration: none;">
+            +--------------------+ <br>
+            | open decrypta draw | <br>
+            +--------------------+          
+        </a>
+            </div>
+
+          </div>
+          
+
         </div>
       </main>
+
+      <div id="popup-container"></div>
+
+    <script>
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+  });
+    </script>
+
+
+  <script type="module">
+    import { run } from '/play.core-master/src/run.js'
+    import * as program from '/play.core-master/src/programs/demos/chromaspiral.js'
+    run(program, { element : document.querySelector('pre') }).then(function(e){
+      console.log(e)
+    }).catch(function(e) {
+      console.warn(e.message)
+      console.log(e.error)
+    })
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- POPUP DATA -->
+ <!-- POPUP DATA -->
+  <!-- POPUP DATA -->
+
+  <div id="ad-popup" class="popup" style="display: none;">
+    <div class="popup-header">
+        <span>data in the last 3 years</span>
+        <button class="close-button">[X]</button>
     </div>
-  </body>
+    <div class="popup-content">
+        <p>
+          infected people: <br>
+          ----------------
+          <br>
+          200 million
+          <br>
+          <br>
+          platform subscriptions: <br>
+          -----------------------
+          <br>
+          800 million <br>
+
+        </p>
+    </div>
+</div>
+
+<script>
+let adPopupOffset = 0;
+
+function showAdPopup() {
+    if ($('#ad-popup').is(':visible')) {
+        return;
+    }
+
+    // Position popup randomly on screen
+    const maxX = window.innerWidth - 400;
+    const maxY = window.innerHeight - 300;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    $('#ad-popup')
+        
+        .show()
+        .resizable();
+
+    // Close button functionality
+    $('#ad-popup .close-button').click(function() {
+        $('#ad-popup').hide();
+    });
+}
+
+// Show popup at random intervals between 15 and 30 seconds
+function scheduleNextPopup() {
+    const minDelay = 10000;  // 15 seconds
+    const maxDelay = 30000;  // 30 seconds
+    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+    
+    setTimeout(() => {
+        showAdPopup();
+        scheduleNextPopup();
+    }, randomDelay);
+}
+
+// Start the popup cycle when document is ready
+$(document).ready(function() {
+    scheduleNextPopup();
+});
+</script>
+
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', function() {
   document.querySelector('.nav-menu').classList.toggle('active');
 });
   </script>
+
+  <script type="module">
+		import { run } from '/play.core-master/src/run.js'
+		import * as program from '/play.core-master/src/programs/demos/chromaspiral.js'
+		run(program, { element : document.querySelector('pre') }).then(function(e){
+			console.log(e)
+		}).catch(function(e) {
+			console.warn(e.message)
+			console.log(e.error)
+		})
+	</script>
+
+
+<script>
+  let popupOffset = 0;
+
+  $(document).ready(function() {
+      $('a[data-id]').click(function() {
+          const id = $(this).data('id');
+          console.log(`Clicked row with ID: ${id}`); // Debug
+
+          // Controlla se il popup è già aperto
+          if ($(`#popup-${id}`).length) {
+              return; // Evita di aprire un popup duplicato
+          }
+
+          const popupContent = `
+              <div class="popup" id="popup-${id}">
+                  <div class="popup-header">
+                      <span>${id} | Decoded Output</span>
+                      <button class="close-button">[X]</button>
+                  </div>
+                  <div class="popup-content">
+                      <!-- Contenuto specifico del popup -->
+                  </div>
+              </div>
+          `;
+          $('#popup-container').append(popupContent);
+          const $popup = $(`#popup-${id}`);
+          $popup.draggable().resizable();
+          $popup.css({
+                top: 20 + popupOffset,
+                left: 20 + popupOffset
+            });
+
+            popupOffset += 20;
+
+          // Carica il contenuto della pagina HTML nel popup
+          $popup.find('.popup-content').load(`decryptaPopups/popup-${id}.html`);
+
+          $(`#popup-${id} .close-button`).click(function() {
+              $(`#popup-${id}`).remove();
+              popupOffset -= 20; // Riduci l'offset quando un popup viene chiuso
+          });
+      });
+  });
+  </script>
+
+
+  </body>
 </html>
