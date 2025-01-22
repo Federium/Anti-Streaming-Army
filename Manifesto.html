@@ -111,21 +111,18 @@
         <button class="close-button">[X]</button>
     </div>
     <div class="popup-content">
+      <p>+--------+</p>
+        <p class="counter" data-target="28000000">&nbsp;&nbsp;0</p>
         <p>
-          infected people: <br>
-          ----------------
-          <br>
-          200 million
-          <br>
-          <br>
-          platform subscriptions: <br>
-          -----------------------
-          <br>
-          800 million <br>
-
+            +--------+ <br>
+            Covid-19 deaths caused by <br> streaming platforms
         </p>
     </div>
 </div>
+
+
+
+
 
 <script>
 let adPopupOffset = 0;
@@ -176,16 +173,12 @@ $(document).ready(function() {
 });
   </script>
 
-  <script type="module">
-		import { run } from '/play.core-master/src/run.js'
-		import * as program from '/play.core-master/src/programs/demos/chromaspiral.js'
-		run(program, { element : document.querySelector('pre') }).then(function(e){
-			console.log(e)
-		}).catch(function(e) {
-			console.warn(e.message)
-			console.log(e.error)
-		})
-	</script>
+
+
+
+
+<!-- ANIMAZIONE ASCII -->
+<script type="module" src="AnimazioneAscii.js"></script>
 
 
 
