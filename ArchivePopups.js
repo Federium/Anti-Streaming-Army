@@ -57,7 +57,7 @@ $(document).ready(function() {
 });
 
 function loadPopupContent(id) {
-    $.get('../archiveData.csv', function(data) {
+    $.get('archiveData.csv', function(data) {
         const lines = data.split('\n');
         for (let i = 1; i < lines.length; i++) {
             const fields = lines[i].split(';');
