@@ -7,9 +7,9 @@ Inspired by this shader by scry
 https://www.shadertoy.com/view/tdsyRf
 */
 
-import { map } from '/play.core-master/src/modules/num.js'
-import { sort } from '/play.core-master/src/modules/sort.js'
-import { vec2, rot, add, mulN, addN, subN, length } from '/play.core-master/src/modules/vec2.js'
+import { map } from 'play.core-master/src/modules/num.js'
+import { sort } from 'play.core-master/src/modules/sort.js'
+import { vec2, rot, add, mulN, addN, subN, length } from 'play.core-master/src/modules/vec2.js'
 
 const { min, sin, cos, floor } = Math
 
