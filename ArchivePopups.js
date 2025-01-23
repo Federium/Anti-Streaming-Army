@@ -1,13 +1,12 @@
 let popupOffset = 0;
 
 $(document).ready(function() {
-    $('a[data-id]').click(function() {
+    $('tr[data-id]').click(function() {
         const id = $(this).data('id');
-        console.log(`Clicked row with ID: ${id}`); // Debug
+        console.log(`Clicked row with ID: ${id}`);
 
-        // Controlla se il popup è già aperto
         if ($(`#popup-${id}`).length) {
-            return; // Evita di aprire un popup duplicato
+            return;
         }
 
         const popupContent = `
@@ -17,22 +16,25 @@ $(document).ready(function() {
                     <button class="close-button">[X]</button>
                 </div>
                 <div class="popup-content">
-                    <!-- Contenuto specifico del popup -->
+                    <div class="code-text">
+                        <p id="crypted-message-${id}">Loading crypted message...</p>
+                    </div>
+                    <div class="translated-text">
+                        <p>Decoded output <br> -------------- <br> <br></p>
+                        <p id="message-content-${id}">Loading message...</p>
+                    </div>
                 </div>
             </div>
         `;
+
         $('#popup-container').append(popupContent);
         const $popup = $(`#popup-${id}`);
 
-
-                // Add containment and bounds checking
         $popup.draggable({
             containment: 'window',
             drag: function(event, ui) {
-                // Prevent dragging beyond viewport
                 const maxX = $(window).width() - $(this).outerWidth();
                 const maxY = $(window).height() - $(this).outerHeight();
-                
                 ui.position.left = Math.min(maxX, Math.max(0, ui.position.left));
                 ui.position.top = Math.min(maxY, Math.max(0, ui.position.top));
             }
@@ -45,20 +47,29 @@ $(document).ready(function() {
 
         popupOffset += 20;
 
-        // Carica il contenuto della pagina HTML nel popup
-        $popup.find('.popup-content').load(`mainPopups/popup-${id}.html`, function() {
-            // Adjust popup size to fit content
-            $popup.css({
-                width: '21cm',
-                height: '29.7cm',
-                maxWidth: '50%',
-                maxHeight: '50%'
-            });
-        });
+        loadPopupContent(id);
 
         $(`#popup-${id} .close-button`).click(function() {
             $(`#popup-${id}`).remove();
-            popupOffset -= 20; // Riduci l'offset quando un popup viene chiuso
+            popupOffset -= 20;
         });
     });
 });
+
+function loadPopupContent(id) {
+    $.get('../archiveData.csv', function(data) {
+        const lines = data.split('\n');
+        for (let i = 1; i < lines.length; i++) {
+            const fields = lines[i].split(';');
+            if (fields[1].trim() === id) {
+                const cryptedMessage = fields[10].trim();
+                const decryptedMessage = `[${fields[1].trim()}] - ${fields[2].trim()} <br> <br> ${fields[9].trim()}`;
+                $(`#crypted-message-${id}`).html(cryptedMessage);
+                $(`#message-content-${id}`).html(decryptedMessage);
+                break;
+            }
+        }
+    }).fail(function() {
+        console.error(`Failed to load CSV data for popup ${id}`);
+    });
+}
