@@ -38,6 +38,23 @@ body {
   }
 
 
+  pre {
+    position: fixed;
+    margin:0;
+    padding:0;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    font-family: 'TronicaMono', monospace;
+    z-index: 0;
+  }
+
+  span {
+    color: #191919;
+  }
+
+
 
 
 
@@ -193,7 +210,7 @@ body {
 
  /* Archive table adjustments */
  .archive {
-  padding-top: 2rem;
+  padding-top: 4rem;
   margin: 0;
 }
 
