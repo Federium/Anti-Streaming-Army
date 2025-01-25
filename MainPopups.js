@@ -3,15 +3,14 @@ let popupOffset = 0;
 $(document).ready(function() {
     $('a[data-id]').click(function() {
         const id = $(this).data('id');
-        console.log(`Clicked row with ID: ${id}`); // Debug
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Controlla se il popup è già aperto
         if ($(`#popup-${id}`).length) {
-            return; // Evita di aprire un popup duplicato
+            return;
         }
 
         const popupContent = `
-            <div class="popup" id="popup-${id}">
+            <div class="popup ${isMobile ? 'mobile' : ''}" id="popup-${id}">
                 <div class="popup-header">
                     <span>${id} | Decoded Output</span>
                     <button class="close-button">[X]</button>
@@ -24,26 +23,34 @@ $(document).ready(function() {
         $('#popup-container').append(popupContent);
         const $popup = $(`#popup-${id}`);
 
+        if (!isMobile) {
+            $popup.draggable({
+                containment: 'window',
+                drag: function(event, ui) {
+                    const maxX = $(window).width() - $(this).outerWidth();
+                    const maxY = $(window).height() - $(this).outerHeight();
+                    ui.position.left = Math.min(maxX, Math.max(0, ui.position.left));
+                    ui.position.top = Math.min(maxY, Math.max(0, ui.position.top));
+                }
+            }).resizable();
 
-                // Add containment and bounds checking
-        $popup.draggable({
-            containment: 'window',
-            drag: function(event, ui) {
-                // Prevent dragging beyond viewport
-                const maxX = $(window).width() - $(this).outerWidth();
-                const maxY = $(window).height() - $(this).outerHeight();
-                
-                ui.position.left = Math.min(maxX, Math.max(0, ui.position.left));
-                ui.position.top = Math.min(maxY, Math.max(0, ui.position.top));
-            }
-        }).resizable();
+            $popup.css({
+                top: 20 + popupOffset,
+                left: 20 + popupOffset
+            });
 
-        $popup.css({
-            top: 20 + popupOffset,
-            left: 20 + popupOffset
-        });
-
-        popupOffset += 20;
+            popupOffset += 20;
+        } else {
+            $popup.css({
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                margin: 0,
+                zIndex: 10000
+            });
+        }
 
         // Carica il contenuto della pagina HTML nel popup
         $popup.find('.popup-content').load(`mainPopups/popup-${id}.html`, function() {
@@ -58,7 +65,9 @@ $(document).ready(function() {
 
         $(`#popup-${id} .close-button`).click(function() {
             $(`#popup-${id}`).remove();
-            popupOffset -= 20; // Riduci l'offset quando un popup viene chiuso
+            if (!isMobile) {
+                popupOffset -= 20;
+            }
         });
     });
 });

@@ -261,6 +261,7 @@ span {
 .ascii-title-wrapper {
   display: flex;
   width: 200%; /* Double the width to accommodate the duplicated content */
+  overflow: hidden;
 }
 
 .ascii-title {
@@ -268,6 +269,7 @@ span {
   animation: scrollText 10s steps(18) infinite;
   color: #ffffff;
   font-family: "TronicaMono";
+  overflow: hidden;
 }
 
 
@@ -275,6 +277,7 @@ span {
   display: flex;
   width: 200%; /* Double the width to accommodate the duplicated content */
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .ascii-subtitle {
@@ -282,12 +285,14 @@ span {
   animation: scrollText 10s steps(18) infinite;
   color: #ffffff;
   font-family: "TronicaMono";
+  overflow: hidden;
 }
 
 .ascii-subtitle-wrapper-invert {
   display: flex;
   width: 200%; /* Double the width to accommodate the duplicated content */
   white-space: nowrap;
+  overflow: hidden;
 }
 
 
@@ -296,6 +301,19 @@ span {
   animation: scrollTextInvert 10s steps(18) infinite;
   color: #ffffff;
   font-family: "TronicaMono";
+  overflow: hidden;
+}
+
+
+.popup.mobile {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  overflow-y: auto;
+  z-index: 10000;
 }
 
 

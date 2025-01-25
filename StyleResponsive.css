@@ -67,7 +67,7 @@ body {
     top: 100%;
     left: 0;
     background-color: #00000000;
-    z-index: 1000;
+    z-index: 10000000;
     padding: 0.5rem;
     width: 100%;
   }
@@ -79,6 +79,17 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
   }
+
+  .nav-menu.active::after {
+    content: "~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/";
+    display: block;
+    white-space: nowrap;
+    color: #ffffff;
+    font-size: 2.5vw;
+    line-height: 2;
+    overflow: hidden;
+  }
+
 
   .nav-menu a:hover, .nav-menu a.active {
     background-color: #ffffff;
@@ -97,7 +108,18 @@ body {
     text-transform: uppercase;
     display: block;
     padding: 0.1rem;
+    transition: transform 0.1s;
   }
+
+  .menu-toggle::before {
+    content: ">";
+    display: inline-block;
+    transition: transform 0.1s;
+  }
+
+  .menu-toggle.active::before {
+    transform: rotate(90deg);
+}
 
   .menu-toggle:hover {
     background-color: hsl(0, 0%, 100%);
@@ -152,6 +174,10 @@ body {
 
 .manifest h1 {
   margin: 0;
+}
+
+.manifest p {
+  line-height: 1.2;
 }
 
 .manifest br {
@@ -217,7 +243,7 @@ body {
 .main-content{
   display: flex;
   flex-direction: column;
-  padding: 4rem 0.5rem 4rem 0.5rem;
+  padding: 6rem 0.5rem 4rem 0.5rem;
   flex: 1; /* occupa tutto lo spazio disponibile */
   z-index: 1000;
   gap: 8rem;
@@ -250,6 +276,73 @@ body {
 .table-header {
   font-size: 2.5vw;
 }
+
+
+
+.ascii-subtitle {
+  display: inline-block;
+  animation: scrollText 10s steps(18) infinite;
+  color: #ffffff;
+  font-family: "TronicaMono";
+  font-size: 2.5vw;
+}
+
+.ascii-title {
+  display: inline-block;
+  animation: scrollText 10s steps(18) infinite;
+  color: #ffffff;
+  font-family: "TronicaMono";
+  font-size: 2.5vw;
+}
+
+
+/* ------------------------- DECRYPTA ------------------------- */
+/* ------------------------- DECRYPTA ------------------------- */
+/* ------------------------- DECRYPTA ------------------------- */
+
+
+.decrypta-text {
+  text-align: left;
+  line-height: 1.2;
+  width: 75%;
+  z-index: 1000;
+}
+
+.svg-table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(60px, 1fr)
+  ); /* layout reattivo */
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.svg-table div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-table img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.decrypta-file-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.decrypta-file {
+  text-align: left; /* Allinea il testo a destra */
+  margin-top: 0.5rem; /* Spazio sopra */
+  font-size: 14px;
+  color: #ffffff; /* Colore del testo */
+}
+
 
 
 

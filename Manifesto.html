@@ -7,6 +7,8 @@
     <title>A.S.A./Manifest</title>
     <link rel="stylesheet" href="Style.css" />
     <link rel="stylesheet" href="StyleResponsive.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   </head>
 
   <body>
@@ -29,7 +31,7 @@
           </ul>
         </nav>
 
-        <button class="menu-toggle">> INDEX</button>
+        <button class="menu-toggle"> INDEX</button>
 
  <!--        <div class="header-info">
           <p class="header-info-title">INFECTION STATS <br> -</p>
@@ -78,23 +80,7 @@
         </div>
       </main>
     </div>
-
-    <script>
-      document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-menu').classList.toggle('active');
-  });
-    </script>
   
-  <script type="module">
-    import { run } from '/play.core-master/src/run.js'
-    import * as program from '/play.core-master/src/programs/demos/chromaspiral.js'
-    run(program, { element : document.querySelector('pre') }).then(function(e){
-      console.log(e)
-    }).catch(function(e) {
-      console.warn(e.message)
-      console.log(e.error)
-    })
-  </script>
 
 
 
@@ -102,82 +88,47 @@
 
 
 
-<!-- POPUP DATA -->
- <!-- POPUP DATA -->
-  <!-- POPUP DATA -->
 
-  <div id="ad-popup" class="popup" style="display: none;">
-    <div class="popup-header">
-        <span>data in the last 3 years</span>
-        <button class="close-button">[X]</button>
-    </div>
-    <div class="popup-content">
-      <p>+--------+</p>
-        <p class="counter" data-target="28000000">&nbsp;&nbsp;0</p>
-        <p>
-            +--------+ <br>
-            Covid-19 deaths caused by <br> streaming platforms
-        </p>
-    </div>
+<!-- POPUP RANDOM DATA -->
+<!-- POPUP RANDOM DATA -->
+<!-- POPUP RANDOM DATA -->
+
+<div id="random-popup" class="random-popup" style="display: none;">
+  <div class="popup-header">
+      <span>data in the last 3 years</span>
+      <button class="close-button">[X]</button>
+  </div>
+  <div class="popup-content">
+    <p>+--------+</p>
+      <p class="counter" data-target="28000000">&nbsp;&nbsp;0</p>
+      <p>
+          +--------+ <br>
+          Covid-19 deaths caused by <br> streaming platforms
+      </p>
+  </div>
 </div>
 
 
 
 
 
-<script>
-let adPopupOffset = 0;
+<!-- POPUP RANDOM MORTI -->
+<!-- POPUP RANDOM MORTI -->
+<!-- POPUP RANDOM MORTI -->
+<script src="PopupRandom.js"></script>
 
-function showAdPopup() {
-    if ($('#ad-popup').is(':visible')) {
-        return;
-    }
+<!-- RESPONSIVE MENU -->
+<!-- RESPONSIVE MENU -->
+<!-- RESPONSIVE MENU -->
+<script src="ResponsiveMenu.js"></script>
 
-    // Position popup randomly on screen
-    const maxX = window.innerWidth - 400;
-    const maxY = window.innerHeight - 300;
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+<!-- POPUPS -->
+<!-- POPUPS -->
+<!-- POPUPS -->
+<script src="MainPopups.js"></script>
 
-    $('#ad-popup')
-        
-        .show()
-        .resizable();
-
-    // Close button functionality
-    $('#ad-popup .close-button').click(function() {
-        $('#ad-popup').hide();
-    });
-}
-
-// Show popup at random intervals between 15 and 30 seconds
-function scheduleNextPopup() {
-    const minDelay = 10000;  // 15 seconds
-    const maxDelay = 30000;  // 30 seconds
-    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
-    
-    setTimeout(() => {
-        showAdPopup();
-        scheduleNextPopup();
-    }, randomDelay);
-}
-
-// Start the popup cycle when document is ready
-$(document).ready(function() {
-    scheduleNextPopup();
-});
-</script>
-
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-  document.querySelector('.nav-menu').classList.toggle('active');
-});
-  </script>
-
-
-
-
-
+<!-- ANIMAZIONE ASCII -->
+<!-- ANIMAZIONE ASCII -->
 <!-- ANIMAZIONE ASCII -->
 <script type="module" src="AnimazioneAscii.js"></script>
 
