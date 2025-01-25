@@ -59,7 +59,7 @@ h3 {
 }
 
 h1 {
-  font-size: 14px;
+  font-size: 1vw;
   letter-spacing: 0rem;
 }
 
@@ -211,19 +211,24 @@ span {
   color: #ffffff;
 }
 
-/* ------------------------- HOME ------------------------- */
-/* ------------------------- HOME ------------------------- */
-/* ------------------------- HOME ------------------------- */
+/* ------------------------- MAIN ------------------------- */
+/* ------------------------- MAIN ------------------------- */
+/* ------------------------- MAIN ------------------------- */
 
-.main-content{
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: left;
   text-align: left;
-  margin: 4rem 0.5rem 4rem 0.5rem;
-  flex: 1; /* occupa tutto lo spazio disponibile */
+  padding: 4rem 0.5rem;
+  flex: 1;
   z-index: 1000;
   gap: 8rem;
+  margin: 0;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* ASCII Title Scrolling Animation */
@@ -233,6 +238,16 @@ span {
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+/* ASCII Title Scrolling Animation */
+@keyframes scrollTextInvert {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
@@ -250,16 +265,45 @@ span {
 
 .ascii-title {
   display: inline-block;
-  animation: scrollText 5s steps(15) infinite;
+  animation: scrollText 10s steps(18) infinite;
   color: #ffffff;
   font-family: "TronicaMono";
-  font-size: 14px;
 }
+
+
+.ascii-subtitle-wrapper {
+  display: flex;
+  width: 200%; /* Double the width to accommodate the duplicated content */
+  white-space: nowrap;
+}
+
+.ascii-subtitle {
+  display: inline-block;
+  animation: scrollText 10s steps(18) infinite;
+  color: #ffffff;
+  font-family: "TronicaMono";
+}
+
+.ascii-subtitle-wrapper-invert {
+  display: flex;
+  width: 200%; /* Double the width to accommodate the duplicated content */
+  white-space: nowrap;
+}
+
+
+.ascii-subtitle-invert {
+  display: inline-block;
+  animation: scrollTextInvert 10s steps(18) infinite;
+  color: #ffffff;
+  font-family: "TronicaMono";
+}
+
+
 
 .home {
   display: flex;
   flex-direction: row;
-  gap: 8rem;
+  gap: 5%;
 }
 
 
@@ -285,7 +329,6 @@ span {
 .chart {
   color: #ffffff;
   font-family: tronicaMono;
-  font-size: 14px;
   margin: 0;
 }
 
@@ -298,7 +341,6 @@ span {
 width: 100%;
 overflow: hidden;
 color: #ffffff;
-font-size: 14px;
 }
 
 
@@ -310,6 +352,7 @@ justify-content: space-between;
 position: relative;
 z-index: 2;
 background: #000;
+font-size: 14px;
 }
 
 .table-header:hover {
@@ -347,7 +390,7 @@ flex-direction: column;
     color: #ffffff;
     font-family: tronicaMono;
     margin: 0rem 0;
-    
+    font-size: 14px;
 }
 
 .table-row {
@@ -584,187 +627,8 @@ flex-direction: column;
 
 
 
-/* MOBILE */
-/* MOBILE */
-/* MOBILE */
 
 
-
-/* Mobile Styles */
-@media (max-width: 767px) {
-  /* Layout changes */
-  .layout {
-    flex-direction: column;
-  }
-
-  /* Header modifications */
-  .main-header {
-    width: 100%;
-    position: relative;
-    height: auto;
-    padding: 1.5rem 1rem 1rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  /* Logo adjustments */
-  .logo {
-    margin: 0;
-    height: 0;
-  }
-
-  /* Hide default navigation */
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #000000;
-    z-index: 1000;
-    padding: 1rem;
-    width: 100% - 2rem;
-  }
-
-  /* Show menu when active */
-  .nav-menu.active {
-    display: block;
-    height: 100vh;
-  }
-
-  .nav-menu a:hover, .nav-menu a.active {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-
-  /* Index button */
-  .menu-toggle {
-    color: #ffffff;
-    background: none;
-    border: none;
-    font-family: "TronicaMono";
-    font-size: 14px;
-    cursor: pointer;
-    text-transform: uppercase;
-    display: block;
-  }
-
-  .menu-toggle:hover {
-    background-color: hsl(0, 0%, 100%);
-    color: #000000;
-  }
-
-  /* Navigation items */
-  .nav-menu ul {
-    flex-direction: row;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-  }
-
-  .nav-menu a {
-    display: block;
-    }
-
-  /* Main content adjustments */
-  .main-content {
-    width: 100%;
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  /* Header info section */
-  .header-info {
-    display: none;
-  }
-
-  /* File path adjustments */
-  .file-path {
-    display: none;
-  }
-
-
-/* -------------- MANIFESTO -------------- */
-/* -------------- MANIFESTO -------------- */
-/* -------------- MANIFESTO -------------- */
-
-.manifest {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0rem; /* spazio tra gli elementi */
-  color: #ffffff;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0rem 0rem 0rem 0rem;
-}
-
-.manifest h1 {
-  margin: 0;
-}
-.manifest p {
-  line-height: 1.5; /* aumenta spazio tra le righe */
-}
-
-.manifest br {
-  content: "";
-  display: block;
-  margin: 1rem 0; /* spazio dopo ogni <br> */
-}
-
-/* -------------- ARCHIVE -------------- */
-/* -------------- ARCHIVE -------------- */
-/* -------------- ARCHIVE -------------- */
-
- /* Archive table adjustments */
- .archive {
-  padding-top: 2rem;
-  margin: 0;
-}
-
-.archive table {
-  width: 100%;
-}
-
-.main-content-archive {
-  margin: 0;
-  padding: 0rem 0.5rem;
-}
-
-/* Hide non-essential columns */
-.archive th:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(5)),
-.archive td:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(5)) {
-  display: none;
-}
-
-/* Style remaining columns */
-.archive th,
-.archive td {
-  padding: 0.5rem;
-  font-size: 14px;
-}
-
-/* Adjust column widths */
-.archive td:nth-child(1) { /* ID */
-  /* width: 25%; */
-}
-.archive td:nth-child(2) { /* DATE */
-/*   width: 35%;
- */}
-.archive td:nth-child(5) { /* PLATFORM */
-/*   width: 40%;
- */}
-
-/* Remove extra spacing */
-.archive tbody tr:last-child td {
-  border-bottom: none;
-}
-
-
-
-}
 
 pre {
   position: fixed;

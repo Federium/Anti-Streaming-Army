@@ -1,0 +1,294 @@
+/* MOBILE */
+/* MOBILE */
+/* MOBILE */
+
+
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  /* Layout changes */
+  .layout {
+    flex-direction: column;
+  }
+
+
+body {
+  font-size: 2.5vw;
+}
+
+  h1,
+  h2,
+  h3 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 2.5vw;
+  }
+  
+  span,
+  p,
+  table, a {
+    font-size: 2.5vw;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-decoration: none;
+  
+  }
+
+
+
+
+
+  /* Header modifications */
+  .main-header {
+    width: 100%;
+    position: fixed;
+    height: auto;
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Logo adjustments */
+  .logo {
+    margin: 0;
+    
+  }
+
+  /* Hide default navigation */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #00000000;
+    z-index: 1000;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    display: block;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .nav-menu a:hover, .nav-menu a.active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+
+  /* Index button */
+  .menu-toggle {
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-family: "TronicaMono";
+    font-size: 2.5vw;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.1rem;
+  }
+
+  .menu-toggle:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: #000000;
+  }
+
+  /* Navigation items */
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 0.1rem;
+    }
+
+  /* Main content adjustments */
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Header info section */
+  .header-info {
+    display: none;
+  }
+
+  /* File path adjustments */
+  .file-path {
+    display: none;
+  }
+
+
+/* -------------- MANIFESTO -------------- */
+/* -------------- MANIFESTO -------------- */
+/* -------------- MANIFESTO -------------- */
+
+.manifest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem; /* spazio tra gli elementi */
+  color: #ffffff;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0rem 0rem 0rem 0rem;
+}
+
+.manifest h1 {
+  margin: 0;
+}
+
+.manifest br {
+  content: "";
+  display: block;
+  margin: 1rem 0; /* spazio dopo ogni <br> */
+}
+
+
+/* -------------- ARCHIVE -------------- */
+/* -------------- ARCHIVE -------------- */
+/* -------------- ARCHIVE -------------- */
+
+ /* Archive table adjustments */
+ .archive {
+  padding-top: 2rem;
+  margin: 0;
+}
+
+.archive table {
+  width: 100%;
+}
+
+.main-content-archive {
+  margin: 0;
+  padding: 2rem 0.5rem;
+}
+
+/* Hide non-essential columns */
+.archive th:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)),:not(:nth-child(8))
+.archive td:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(8)) {
+  display: none;
+}
+
+/* Style remaining columns */
+.archive th,
+.archive td {
+  padding: 0.1rem 0rem;
+  font-size: 2.5vw;
+}
+
+/* Adjust column widths */
+.archive td:nth-child(1) { /* ID */
+  /* width: 25%; */
+}
+.archive td:nth-child(2) { /* DATE */
+/*   width: 35%;
+ */}
+.archive td:nth-child(5) { /* PLATFORM */
+/*   width: 20%;
+ */}
+
+/* Remove extra spacing */
+.archive tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* -------------- MAIN -------------- */
+/* -------------- MAIN -------------- */
+/* -------------- MAIN -------------- */
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0.5rem 4rem 0.5rem;
+  flex: 1; /* occupa tutto lo spazio disponibile */
+  z-index: 1000;
+  gap: 8rem;
+  width: 100%;
+  margin: 0;
+}
+
+
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+}
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  pointer-events: auto;
+  gap: 0rem;
+}
+
+.table-row::before{
+  font-size: 2.5vw;
+}
+
+.table-header {
+  font-size: 2.5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#random-popup {
+  position: fixed;
+  width: 50%;
+  height: 18%;
+  background: rgb(0, 0, 0);
+  border: 1.5px solid #ffffff;
+  z-index: 1000000;
+  animation: flash 5s infinite;
+}
+
+.close-button {
+  font-size: 2.5vw;
+}
+
+.popup-content {
+  gap: 0;
+}
+
+.popup-header {
+  padding: 0 0.5rem;
+}
+
+
+}
+
+
+
