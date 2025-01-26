@@ -263,7 +263,7 @@ span {
 
 .ascii-title-wrapper {
   display: flex;
-  width: 200%; /* Double the width to accommodate the duplicated content */
+  width: 320%; /* Double the width to accommodate the duplicated content */
   overflow: hidden;
 }
 
@@ -278,7 +278,7 @@ span {
 
 .ascii-subtitle-wrapper {
   display: flex;
-  width: 200%; /* Double the width to accommodate the duplicated content */
+  width: 240%; /* Double the width to accommodate the duplicated content */
   white-space: nowrap;
   overflow: hidden;
 }
@@ -339,10 +339,13 @@ span {
   color: #ffffff;
   font-family: tronicaMono;
   margin: 0;
+  font-size: 14px;
 }
 
 
-
+.divisorio {
+  display: none;
+}
 
 
 /* Collapsible Table Styles */
@@ -413,6 +416,52 @@ flex-direction: column;
   color: #000000;
   background-color: #ffffff;
  }
+
+
+/* ------------------------- AUDIO POPUP ------------------------- */
+/* ------------------------- AUDIO POPUP ------------------------- */
+/* ------------------------- AUDIO POPUP ------------------------- */
+
+
+.video-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-direction: column-reverse;
+}
+
+.video-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+
+.transcript-line {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.transcript-line.active {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
 
 
 /* ------------------------- MANIFEST ------------------------- */

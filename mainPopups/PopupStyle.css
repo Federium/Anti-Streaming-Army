@@ -2,11 +2,14 @@
 /* --------------------- DOCUMENT MAIN --------------------- */
 /* --------------------- DOCUMENT MAIN --------------------- */
 
+
 .popup-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the image scales to fit within the container */
-  }
+    object-fit: contain;
+    position: relative;
+}
+
 
 
 

@@ -307,13 +307,15 @@ body {
   margin: 0;
 }
 
-
+#responsive {
+  display: none;
+}
 
 
 .home {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -331,6 +333,27 @@ body {
 
 .table-header {
   font-size: 2.5vw;
+}
+
+.chart {
+  color: #ffffff;
+  font-family: tronicaMono;
+  margin: 0;
+  font-size: 2.5vw;
+}
+
+.divisorio {
+  display: block;
+}
+
+.divisorio::after {
+  content: '_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_';
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: clip;
+  font-family: 'TronicaMono', monospace;
+  color: #ffffff;
 }
 
 
@@ -351,6 +374,12 @@ body {
   font-size: 2.5vw;
 }
 
+.m-scroll {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+}
 
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */

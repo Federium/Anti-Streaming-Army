@@ -3,63 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSG-001 Details</title>
+    <title>CALL-01</title>
     <link rel="stylesheet" href="Style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 </head>
 <body>
-    <div class="popup-content">
-        
-      <p>
-        Encrypted Call - Transcript #1 <br>
-Participants: Ronald Jefferson (Director, Streaming Lobby) & Dr. Zhao Ming (Director, Wuhan Laboratory) <br>
-Date: [REDACTED] <br>
+        <div class="video-container">
+            <video id="callVideo" style="width: 100%; max-width: 200px;">
+                <source src="/mainPopups/LeakedFiles/PhoneCall.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="video-controls">
+                <button id="playPauseBtn" class="control-btn">
+                    +------------+ <br>
+                    | PLAY/PAUSE | <br>
+                    +------------+
+                </button>
+                
+                <button id="resetBtn" class="control-btn">
+                    +---------+ <br>
+                    | RESTART | <br>
+                    +---------+
+                </button>
+            </div>
+            <div>
+              <p>
+                Encrypted Call [10012018] - Transcript #1 <br> <br>
+                Participants: Ronald Jefferson (Director, Streaming Lobby) & Dr. Zhao Ming (Director, Wuhan Laboratory)
+              </p>
+            </div>
+        </div>
 
-<br>
+        <div class="transcript">
+            <div class="transcript-line" data-start="0" data-end="5">
+              Ronald Jefferson <br><br> [Distorted voice] Dr. Zhao, I assume you’ve reviewed the proposal and the terms we sent over?
+            </div>
 
-        Ronald Jefferson: [Distorted voice] Dr. Zhao, I assume you’ve reviewed the proposal and the terms we sent over? <br>
-<br>
-Dr. Zhao Ming: [Distorted voice] I have, Mr. Jefferson. And I must say, the scope of what you’re asking is... extraordinary. To weaponize a virus for such purposes—this isn’t standard research. It’s dangerous. <br>
-<br>
-Ronald Jefferson: Extraordinary, yes. But isn’t that what science is about? Pushing boundaries? Besides, the terms are clear. You and your team receive unparalleled funding and anonymity. The results, Dr. Zhao, will speak for themselves. <br>
-<br>
-Dr. Zhao Ming: And if something goes wrong? A project of this scale carries enormous risks. The spread could be uncontrollable, and the fallout— <br>
-<br>
-Ronald Jefferson: We’ve accounted for every scenario. The agreement we sent outlines contingency measures, doesn’t it? If you’re worried about liability, the contract protects you. And as for control, you’ll ensure the virus functions exactly as we’ve specified. <br>
-<br>
-Dr. Zhao Ming: You make it sound simple. But biology is rarely predictable. Even with the best designs, nature finds a way to circumvent our intentions. <br>
-<br>
-Ronald Jefferson: That’s why you’re the best in the field, Dr. Zhao. We trust you to refine it until it’s perfect. This isn’t your first groundbreaking achievement, after all. Consider the legacy this will leave behind. <br>
-<br>
-Dr. Zhao Ming: Legacy? This kind of legacy comes at a cost. I’ve reviewed the draft contract, and while the funding is substantial, it’s not just about money. My team’s safety, the lab’s reputation—those are at stake. <br>
-<br>
-Ronald Jefferson: The contract isn’t just about compensation. It’s a guarantee. Full immunity, financial and legal. Your name, your lab—they stay out of the headlines. Any trace of involvement? Gone. <br>
-<br>
-Dr. Zhao Ming: [Pauses] I’ve also reviewed the technical specifications you sent. You want a virus with high transmissibility, mild to moderate symptoms, and a delayed incubation period to maximize spread. It’s... possible. My team has already seen promising results in early simulations. <br>
-<br>
-Ronald Jefferson: Excellent. That’s what I needed to hear. Once you finalize the virus, we’ll begin the next phase. As outlined in the agreement, the initial outbreak must look natural—animal-to-human transmission. <br>
-<br>
-Dr. Zhao Ming: [Reluctantly] The documents also mention an escalation plan in case the public response isn’t sufficient. Do you truly believe this is necessary? <br>
-<br>
-Ronald Jefferson: Necessary? Absolutely. People are complacent. Fear is the only motivator that works on a global scale. And our partners in media are ready to amplify that fear. <br>
-<br>
-Dr. Zhao Ming: [Sighs] Very well. I’ll sign the contract and move forward, but I want regular updates and control over the initial release. If anything deviates, I’ll pull the plug. <br>
-<br>
-Ronald Jefferson: Of course, Dr. Zhao. Your concerns are noted. But remember, this partnership is built on trust. We need each other to make this work. <br>
-<br>
-Dr. Zhao Ming: [Quietly] Trust, indeed. <br>
-<br>
-Ronald Jefferson: Once you’ve signed the contract, send it back through the encrypted channel. Our legal team will take care of the rest. Let’s not waste any more time. The world is ready for this... shift. <br>
-<br>
-Dr. Zhao Ming: I’ll have it returned within 24 hours. <br>
-<br>
-Ronald Jefferson: Good. History is in the making, Dr. Zhao. Don’t forget that. <br>
-      </p>
-        
+            <div class="transcript-line" data-start="5" data-end="18">
+              Dr. Zhao Ming [Distorted voice] <br><br> I have, Mr. Jefferson. And I must say, the scope of what you’re asking is... extraordinary. To weaponize a virus for such purposes—this isn’t standard research. It’s dangerous.
+            </div>
+            
+            <div class="transcript-line" data-start="18" data-end="35">
+              Ronald Jefferson <br><br> Extraordinary, yes. But isn’t that what science is about? Pushing boundaries? Besides, the terms are clear. You and your team receive unparalleled funding and anonymity. The results, Dr. Zhao, will speak for themselves. 
+            </div>
+
+            <div class="transcript-line" data-start="35" data-end="44">
+              Dr. Zhao Ming <br><br> And if something goes wrong? A project of this scale carries enormous risks. The spread could be uncontrollable, and the fallout— 
+            </div>
+
+            <div class="transcript-line" data-start="44" data-end="60">
+              Ronald Jefferson <br><br> We’ve accounted for every scenario. The agreement we sent outlines contingency measures, doesn’t it? If you’re worried about liability, the contract protects you. And as for control, you’ll ensure the virus functions exactly as we’ve specified. 
+            </div>
+
+            <div class="transcript-line" data-start="60" data-end="70">
+              Dr. Zhao Ming <br><br> You make it sound simple. But biology is rarely predictable. Even with the best designs, nature finds a way to circumvent our intentions. 
+            </div>
+
+            <div class="transcript-line" data-start="70" data-end="81">
+              Ronald Jefferson <br><br> That’s why you’re the best in the field, Dr. Zhao. We trust you to refine it until it’s perfect. This isn’t your first groundbreaking achievement, after all. Consider the legacy this will leave behind. 
+            </div>
+
+            <div class="transcript-line" data-start="81" data-end="95">
+              Dr. Zhao <br><br> Ming Legacy? This kind of legacy comes at a cost. I’ve reviewed the draft contract, and while the funding is substantial, it’s not just about money. My team’s safety, the lab’s reputation—those are at stake. 
+            </div>
+
+            <div class="transcript-line" data-start="95" data-end="108">
+              Ronald Jefferson <br><br> The contract isn’t just about compensation. It’s a guarantee. Full immunity, financial and legal. Your name, your lab—they stay out of the headlines. Any trace of involvement? Gone.
+            </div>
+
+            <div class="transcript-line" data-start="108" data-end="128">
+              Dr. Zhao Ming [Pauses] <br><br> I’ve also reviewed the technical specifications you sent. You want a virus with high transmissibility, mild to moderate symptoms, and a delayed incubation period to maximize spread. It’s... possible. My team has already seen promising results in early simulations.
+            </div>
+
+            <div class="transcript-line" data-start="128" data-end="138">
+              Ronald Jefferson <br><br> Excellent. That’s what I needed to hear. Once you finalize the virus, we’ll begin the next phase. As outlined in the agreement, the initial outbreak must look natural—animal-to-human transmission.
+            </div>
+
+            <div class="transcript-line" data-start="138" data-end="146">
+              Dr. Zhao Ming <br><br> [Reluctantly] The documents also mention an escalation plan in case the public response isn’t sufficient. Do you truly believe this is necessary? 
+            </div>
+
+            <div class="transcript-line" data-start="146" data-end="156">
+              Ronald Jefferson <br><br> Necessary? Absolutely. People are complacent. Fear is the only motivator that works on a global scale. And our partners in media are ready to amplify that fear. 
+            </div>
+
+            <div class="transcript-line" data-start="156" data-end="167">
+              Dr. Zhao Ming [Sighs] <br><br> Very well. I’ll sign the contract and move forward, but I want regular updates and control over the initial release. If anything deviates, I’ll pull the plug. 
+            </div>
+
+            <div class="transcript-line" data-start="167" data-end="175">
+              Ronald Jefferson <br><br> Of course, Dr. Zhao. Your concerns are noted. But remember, this partnership is built on trust. We need each other to make this work. 
+            </div>
+
+            <div class="transcript-line" data-start="175" data-end="176">
+              Dr. Zhao Ming <br><br> [Quietly] Trust, indeed. 
+            </div>
+
+            <div class="transcript-line" data-start="176" data-end="187">
+              Ronald Jefferson <br><br> Once you’ve signed the contract, send it back through the encrypted channel. Our legal team will take care of the rest. Let’s not waste any more time. The world is ready for this... shift. 
+            </div>
+
+            <div class="transcript-line" data-start="187" data-end="190">
+              Dr. Zhao Ming <br><br> I’ll have it returned within 24 hours. 
+            </div>
+
+            <div class="transcript-line" data-start="190" data-end="200">
+              Ronald Jefferson <br><br> Good. History is in the making, Dr. Zhao. Don’t forget that. 
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            const video = document.getElementById('callVideo');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const transcriptLines = document.querySelectorAll('.transcript-line');
+
+            playPauseBtn.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.classList.add('playing');
+                } else {
+                    video.pause();
+                    playPauseBtn.classList.remove('playing');
+                }
+            });
+
+            resetBtn.addEventListener('click', function() {
+                video.pause();
+                video.currentTime = 0;
+                playPauseBtn.classList.remove('playing');
+            });
+
+            video.addEventListener('timeupdate', function() {
+                const currentTime = video.currentTime;
+                
+                transcriptLines.forEach(line => {
+                    const start = parseFloat(line.dataset.start);
+                    const end = parseFloat(line.dataset.end);
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        line.classList.add('active');
+                    } else {
+                        line.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
 </body>
-
-<div id="popup-container"></div>
-
 </html>

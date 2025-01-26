@@ -10,9 +10,53 @@
 </head>
 <body>
     
-  <div id="popup-container">
-    <img src="/mainPopups/LeakedFiles/File_01.jpg" alt="Document Image" class="popup-image">
+  <div class="popup-image-wrapper">
+    <img src="/mainPopups/LeakedFiles/File_01.jpg" class="popup-image" onload="createLoadingStripes(this.parentElement)" />
 </div>
+
+<script>
+function createLoadingStripes(imageWrapper, numStripes = 10) {
+    // Create stripes container
+    const stripesContainer = document.createElement('div');
+    stripesContainer.className = 'image-loading';
+    stripesContainer.style.position = 'absolute';
+    stripesContainer.style.top = '0';
+    stripesContainer.style.left = '0';
+    stripesContainer.style.width = '100%';
+    stripesContainer.style.height = '100%';
+    stripesContainer.style.display = 'flex';
+    stripesContainer.style.flexDirection = 'column';
+
+    // Create stripes
+    for (let i = 0; i < numStripes; i++) {
+        const stripe = document.createElement('div');
+        stripe.style.width = '100%';
+        stripe.style.height = (100 / numStripes) + '%';
+        stripe.style.background = 'black';
+        stripesContainer.appendChild(stripe);
+    }
+
+    imageWrapper.appendChild(stripesContainer);
+
+    // Animate stripes
+    const stripes = stripesContainer.children;
+    let delay = 0;
+    for (let stripe of stripes) {
+        setTimeout(() => {
+            stripe.style.opacity = '0';
+        }, delay);
+        delay += 300; // Adjust speed here
+    }
+
+    // Remove container after animation
+    setTimeout(() => {
+        stripesContainer.remove();
+    }, delay + 500);
+}
+
+</script>
+
+  
 
 </body>
 

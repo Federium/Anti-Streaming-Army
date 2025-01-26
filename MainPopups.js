@@ -12,7 +12,7 @@ $(document).ready(function() {
         const popupContent = `
             <div class="popup ${isMobile ? 'mobile' : ''}" id="popup-${id}">
                 <div class="popup-header">
-                    <span>${id} | Decoded Output</span>
+                    <span>${id} | leaked file</span>
                     <button class="close-button">[X]</button>
                 </div>
                 <div class="popup-content">
@@ -56,8 +56,8 @@ $(document).ready(function() {
         $popup.find('.popup-content').load(`mainPopups/popup-${id}.html`, function() {
             // Adjust popup size to fit content
             $popup.css({
-                width: '21cm',
-                height: '29.7cm',
+                width: '40%',
+                height: '65%',
                 maxWidth: '100%',
                 maxHeight: '100%'
             });
