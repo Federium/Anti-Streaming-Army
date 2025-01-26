@@ -23,15 +23,56 @@
   ); /* layout reattivo */
   gap: 1rem;
   z-index: 1000;
+  
 }
 
 .svg-table-index div {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
 }
 
 .svg-table-index img {
   max-width: 100%;
   height: auto;
+}
+
+
+
+
+/* --------------------- DECYPTA POPUPS --------------------- */
+/* --------------------- DECYPTA POPUPS --------------------- */
+/* --------------------- DECYPTA POPUPS --------------------- */
+
+#copy-button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: tronicaMono;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.textToCopy {
+  font-family: tronicaMono;
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  margin-bottom: 1rem;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+.textToCopy::after,
+.textToCopy::before {
+  content: '_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_';
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: clip;
+  font-family: 'TronicaMono', monospace;
+  width: 100%;
 }

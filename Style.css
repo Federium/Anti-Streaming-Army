@@ -13,12 +13,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0rem;
+  width: 0.2rem;
+  height: 0.2rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #515151;
 }
  
 /* Handle */
@@ -165,6 +166,7 @@ span {
   color: #ffffff;
   text-align: left;
   z-index: 10000000000;
+  font-size: 14px;
 }
 
 .button a:hover{
@@ -174,6 +176,7 @@ span {
 .button a{
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .alphabet-index {
@@ -302,18 +305,6 @@ span {
   color: #ffffff;
   font-family: "TronicaMono";
   overflow: hidden;
-}
-
-
-.popup.mobile {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  overflow-y: auto;
-  z-index: 10000;
 }
 
 
@@ -510,7 +501,7 @@ flex-direction: column;
 
 .popup {
   position: absolute;
-  width: 35%;
+  width: 45%;
   height: 35%;
   background: rgb(0, 0, 0);
   z-index: 10000;
@@ -643,6 +634,16 @@ flex-direction: column;
 }
 
 
+.decrypta-text-download::after {
+  content: '_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_';
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: clip;
+  font-family: 'TronicaMono', monospace;
+}
+
+
 
 
 
@@ -707,12 +708,17 @@ pre {
   color: #ffffff;
 }
 
+
 .popup-header {
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+}
+
+.popup-content {
+  gap: 0;
 }
 
 /* Counter Animation */
@@ -725,5 +731,10 @@ pre {
 
 
 
-
-
+.alphabet-trigger {
+  font-family: tronicaMono;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  padding: 0;
+  margin: 0;
+}

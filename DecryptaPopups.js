@@ -4,6 +4,7 @@ $(document).ready(function() {
     $('a[data-id]').click(function() {
         const id = $(this).data('id');
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        console.log(`Clicked row with ID: ${id}`);
 
         if ($(`#popup-${id}`).length) {
             return;
@@ -52,16 +53,7 @@ $(document).ready(function() {
             });
         }
 
-        // Carica il contenuto della pagina HTML nel popup
-        $popup.find('.popup-content').load(`mainPopups/popup-${id}.html`, function() {
-            // Adjust popup size to fit content
-            $popup.css({
-                width: '21cm',
-                height: '29.7cm',
-                maxWidth: '100%',
-                maxHeight: '100%'
-            });
-        });
+        $popup.find('.popup-content').load(`decryptaPopups/popup-${id}.html`);
 
         $(`#popup-${id} .close-button`).click(function() {
             $(`#popup-${id}`).remove();

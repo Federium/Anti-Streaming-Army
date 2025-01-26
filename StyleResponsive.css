@@ -55,6 +55,45 @@ body {
   }
 
 
+/* ------------------------- BUTTON STYLE ------------------------- */
+/* ------------------------- BUTTON STYLE ------------------------- */
+/* ------------------------- BUTTON STYLE ------------------------- */
+
+.button{
+  color: #ffffff;
+  text-align: left;
+  z-index: 10000000000;
+  font-size: 2.5vw;
+}
+
+.button a:hover{
+  background-color: #ffffff;
+  color: #000;
+}
+.button a{
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.alphabet-index {
+  color: #ffffff;
+  text-align: left;
+  z-index: 10000000000;
+  font-size: 2.5vw !important;
+}
+
+.alphabet-index a:hover{
+  color: #000000;
+  background-color: #ffffff;
+  z-index: 10000000000;
+}
+
+.alphabet-trigger {
+  font-size: 2.5vw !important;
+}
+
+
 
 
 
@@ -361,6 +400,27 @@ body {
 }
 
 
+.textToCopy {
+  font-size: 2.5vw;
+}
+
+
+/* ------------------------- ARCHIVE POPUP ------------------------- */
+/* ------------------------- ARCHIVE POPUP ------------------------- */
+/* ------------------------- ARCHIVE POPUP ------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -401,4 +461,15 @@ body {
 }
 
 
-
+.popup.mobile {
+  position: fixed !important;
+  top: 4rem !important;
+  left: 50% !important;
+  transform: translate(-50%, 0) !important;
+  width: calc(100% - 1rem) !important;
+  height: 60% !important;
+  margin: 0 !important;
+  overflow-y: auto;
+  z-index: 10000;
+  border: #ffffff 1px solid;
+}

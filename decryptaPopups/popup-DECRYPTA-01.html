@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSG-001 Details</title>
+    <link rel="stylesheet" href="/mainPopups/PopupStyle.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div onclick="copyText()" id="copy-button" class="button">
+    +--------------+ <br>
+    | <a>copia codice</a> | <br>
+    +--------------+          
+</div>
+
+<xmp id="textToCopy" class="textToCopy">
+1  #define ENC_A 3
+2  #define ENC_B 2
+3  #define BUTTON_PIN A1 // Button for the encoder
+4  #define POT_PIN A0    // Analog pin for the potentiometer
+
+5  // Define LED pins
+6  #define LED_POT 10  // LED for the potentiometer
+7  #define LED_ENC 9   // LED for the encoder
+
+8  // Define new button pins
+9  #define BUTTON1_PIN 6 // Additional button 1
+10 #define BUTTON2_PIN 7 // Additional button 2
+
+11 #define BUZZER_PIN 13 // Pin for the piezo buzzer
+
+12 #define USB_PIN 5  // Digital pin connected to USB VCC
+
+13 unsigned long _lastIncReadTime = micros(); 
+14 unsigned long _lastDecReadTime = micros(); 
+15 int _pauseLength = 25000;
+16 int _fastIncrement = 10;
+
+17 unsigned long previousMillis = 0; // Timer for blinking
+18 unsigned long audioMillis = 0;    // Timer for the metronome
+19 const long blinkInterval = 50;   // Blinking interval in milliseconds
+20 const int max_frequency = 2000;   // Maximum frequency (continuous sound)
+21 const int min_interval = 50;      // Minimum interval for the metronome (faster)
+22 const int max_interval = 1000;    // Maximum interval for the metronome (slower)
+23 bool isBlinking = false;          // Blinking state
+24 bool ledState = false;            // LED state during blinking
+
+25 unsigned long buzzerStartTime = 0; // Start time for the buzzer
+26 const unsigned long buzzerDuration = 3000; // Continuous sound duration (in milliseconds)
+27 bool buzzerActive = false; // Buzzer state (sound active or not)
+
+28 volatile int counter = 0;
+29 const int max_value = 835;      // Maximum value for the encoder
+
+30 // Sequence of values for pot_target and enc_target
+31 const int pot_targets[] = {30, 18, 26, 33, 24, 21};
+32 const int enc_targets[] = {137, 798, 657, 249, 54, 374};
+33 const int sequence_length = sizeof(pot_targets) / sizeof(pot_targets[0]);
+
+34 int pot_target = pot_targets[0]; // Current value of pot_target
+35 int enc_target = enc_targets[0]; // Current value of enc_target
+
+36 int usbCounter = 0;              // USB counter
+37 bool lastUsbState = false;       // Previous USB state
+
+38 unsigned long debounceDelay = 50; // Debounce delay for USB
+39 unsigned long lastDebounceTime = 0; // Time of last USB state change
+
+40 void setup() {
+41   // Set encoder pins and attach interrupts
+42   pinMode(ENC_A, INPUT_PULLUP);
+43   pinMode(ENC_B, INPUT_PULLUP);
+44   attachInterrupt(digitalPinToInterrupt(ENC_A), read_encoder, CHANGE);
+45   attachInterrupt(digitalPinToInterrupt(ENC_B), read_encoder, CHANGE);
+
+46   // Button configuration
+47   pinMode(BUTTON_PIN, INPUT_PULLUP); // Button with pull-up resistor
+
+48   // Potentiometer configuration
+49   pinMode(POT_PIN, INPUT);
+
+50   // LED configuration
+51   pinMode(LED_POT, OUTPUT);
+52   pinMode(LED_ENC, OUTPUT);
+
+53   // New buttons configuration
+54   pinMode(BUTTON1_PIN, INPUT_PULLUP); // Button 1 with pull-up resistor
+55   pinMode(BUTTON2_PIN, INPUT_PULLUP); // Button 2 with pull-up resistor
+
+56   // Buzzer configuration
+57   pinMode(BUZZER_PIN, OUTPUT);
+
+58   pinMode(USB_PIN, INPUT_PULLUP); // Enable internal pull-up resistor
+
+59   // Start the serial monitor to show output
+60   Serial.begin(115200);
+61 }
+
+62 void loop() {
+63   // Read the potentiometer value
+64   int potValue = analogRead(POT_PIN);
+
+65   // Normalize potentiometer value (0-1023 to 0-100)
+66   int normalizedPotValue = map(potValue, 0, 1023, 1, 100);
+
+67   // Control the potentiometer LED
+68   if (normalizedPotValue == pot_target) {
+69     digitalWrite(LED_POT, HIGH); // Turn on potentiometer LED
+70   } else {
+71     digitalWrite(LED_POT, LOW);  // Turn off potentiometer LED
+72   }
+
+73   // Control the encoder LED
+74   if (counter == enc_target) {
+75     digitalWrite(LED_ENC, HIGH); // Turn on encoder LED
+76   } else {
+77     digitalWrite(LED_ENC, LOW);  // Turn off encoder LED
+78   }
+
+79   // Check if LEDs need to be turned on
+80   bool potLedOn = (normalizedPotValue == pot_target);
+81   bool encLedOn = (counter == enc_target);
+
+82   // If both LEDs are on, start blinking
+83   if (potLedOn && encLedOn) {
+84     isBlinking = true;
+85   } else {
+86     isBlinking = false;
+87     digitalWrite(LED_POT, potLedOn ? HIGH : LOW); // Normal state for potentiometer LED
+88     digitalWrite(LED_ENC, encLedOn ? HIGH : LOW); // Normal state for encoder LED
+89   }
+
+90   // Handle blinking
+91   if (isBlinking) {
+92     unsigned long currentMillis = millis();
+93     if (currentMillis - previousMillis >= blinkInterval) {
+94       previousMillis = currentMillis;
+95       ledState = !ledState; // Toggle LED state during blinking
+96     }
+97     digitalWrite(LED_POT, ledState ? HIGH : LOW);
+98     digitalWrite(LED_ENC, ledState ? HIGH : LOW);
+99   }
+
+100  // Read USB state with debounce
+101  bool currentUsbState = digitalRead(USB_PIN) == LOW;
+102  if (currentUsbState != lastUsbState) {
+103    unsigned long currentTime = millis();
+104    if (currentTime - lastDebounceTime > debounceDelay) {
+105      lastDebounceTime = currentTime;
+106      lastUsbState = currentUsbState;
+
+107      // If USB was connected
+108      if (currentUsbState) {
+109        usbCounter = (usbCounter + 1) % sequence_length; // Increment counter and reset to 0
+110        pot_target = pot_targets[usbCounter];
+111        enc_target = enc_targets[usbCounter];
+112      }
+113    }
+114  }
+
+115  // If USB is disconnected, turn off the buzzer
+116  if (!currentUsbState) {
+117    noTone(BUZZER_PIN);
+118  } else {
+119    // Handle sound (metronome)
+120    unsigned long currentMillis = millis();
+121    if (currentMillis - audioMillis >= calculateInterval(encLedOn, counter)) {
+122      audioMillis = currentMillis;
+
+123      // Generate sound or stop it
+124      if (encLedOn) {
+125        tone(BUZZER_PIN, max_frequency); // Continuous sound
+126      } else {
+127        tone(BUZZER_PIN, 1000); // Short sound (metronome)
+128        delay(100);             // Sound duration
+129        noTone(BUZZER_PIN);     // Turn off the sound
+130      }
+131    }
+132  }
+
+133  // Read button states
+134  bool buttonState = digitalRead(BUTTON_PIN) == LOW; // LOW when pressed
+135  bool button1State = digitalRead(BUTTON1_PIN) == LOW; // Button 1
+136  bool button2State = digitalRead(BUTTON2_PIN) == LOW; // Button 2
+
+137  // Send data to TouchDesigner
+138  Serial.print(" POT: ");
+139  Serial.print(normalizedPotValue);
+140  Serial.print(" ENC: ");
+141  Serial.print(counter);
+142  Serial.print(" BTN: ");
+143  Serial.print(buttonState);
+144  Serial.print(" BTN1: ");
+145  Serial.print(button1State);
+146  Serial.print(" USB: ");
+147  Serial.print(currentUsbState);
+148  Serial.print(" USB_COUNTER: ");
+149  Serial.print(usbCounter);
+150  Serial.print(" POT_TARGET: ");
+151  Serial.print(pot_target);
+152  Serial.print(" ENC_TARGET: ");
+153  Serial.println(enc_target);
+
+154  // Optional delay to limit serial data frequency
+155  delay(10);
+156 }
+
+157 void read_encoder() {
+158   // Encoder interrupt routine for both pins. Updates counter
+159   static uint8_t old_AB = 3;  // Lookup table index
+160   static int8_t encval = 0;   // Encoder value  
+161   static const int8_t enc_states[] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0}; // Lookup table
+
+162   old_AB <<= 2;  // Remember previous state
+
+163   if (digitalRead(ENC_A)) old_AB |= 0x02; // Add current state of pin A
+164   if (digitalRead(ENC_B)) old_AB |= 0x01; // Add current state of pin B
+  
+165   encval += enc_states[(old_AB & 0x0f)];
+
+166   // Update counter if encoder has rotated a full indent (at least 4 steps)
+167   if (encval > 3) {        // Four steps forward
+168     int changevalue = 1;
+169     if ((micros() - _lastIncReadTime) < _pauseLength) {
+170       changevalue = _fastIncrement * changevalue; 
+171     }
+172     _lastIncReadTime = micros();
+173     counter = (counter + changevalue) % max_value; // Update and wrap counter
+174     encval = 0;
+175   } else if (encval < -3) { // Four steps backward
+176     int changevalue = -1;
+177     if ((micros() - _lastDecReadTime) < _pauseLength) {
+178       changevalue = _fastIncrement * changevalue; 
+179     }
+180     _lastDecReadTime = micros();
+181     counter = (counter + changevalue + max_value) % max_value; // Update and wrap counter
+182     encval = 0;
+183   }
+184 }
+
+185 // Calculate metronome interval based on distance from target
+186 int calculateInterval(int potValue, int encValue) {
+187   int potDiff = abs(potValue - pot_target);
+188   int encDiff = abs(encValue - enc_target);
+189   int totalDiff = potDiff + encDiff;
+
+190   // The closer to the target, the shorter the interval
+191   int interval = map(totalDiff, 0, 100, min_interval, max_interval);
+192   return constrain(interval, min_interval, max_interval);
+193 }
+
+
+$$$$\  $$$$$$\             $$\     $$\        $$$$$$\    $$\                                                 $$\                             $$$$$$\                                    $$$$\ 
+$$  _|$$  __$$\            $$ |    \__|      $$  __$$\   $$ |                                                \__|                           $$  __$$\                                   \_$$ |
+$$ |  $$ /  $$ |$$$$$$$\ $$$$$$\   $$\       $$ /  \__|$$$$$$\    $$$$$$\   $$$$$$\   $$$$$$\  $$$$$$\$$$$\  $$\ $$$$$$$\   $$$$$$\         $$ /  $$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\   $$ |
+$$ |  $$$$$$$$ |$$  __$$\\_$$  _|  $$ |      \$$$$$$\  \_$$  _|  $$  __$$\ $$  __$$\  \____$$\ $$  _$$  _$$\ $$ |$$  __$$\ $$  __$$\        $$$$$$$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |  $$ |
+$$ |  $$  __$$ |$$ |  $$ | $$ |    $$ |       \____$$\   $$ |    $$ |  \__|$$$$$$$$ | $$$$$$$ |$$ / $$ / $$ |$$ |$$ |  $$ |$$ /  $$ |       $$  __$$ |$$ |  \__|$$ / $$ / $$ |$$ |  $$ |  $$ |
+$$ |  $$ |  $$ |$$ |  $$ | $$ |$$\ $$ |      $$\   $$ |  $$ |$$\ $$ |      $$   ____|$$  __$$ |$$ | $$ | $$ |$$ |$$ |  $$ |$$ |  $$ |       $$ |  $$ |$$ |      $$ | $$ | $$ |$$ |  $$ |  $$ |
+$$$$\ $$ |  $$ |$$ |  $$ | \$$$$  |$$ |      \$$$$$$  |  \$$$$  |$$ |      \$$$$$$$\ \$$$$$$$ |$$ | $$ | $$ |$$ |$$ |  $$ |\$$$$$$$ |       $$ |  $$ |$$ |      $$ | $$ | $$ |\$$$$$$$ |$$$$ |
+\____|\__|  \__|\__|  \__|  \____/ \__|$$$$$$\\______/    \____/ \__|       \_______| \_______|\__| \__| \__|\__|\__|  \__| \____$$ |$$$$$$\\__|  \__|\__|      \__| \__| \__| \____$$ |\____|
+                                       \______|                                                                            $$\   $$ |\______|                                 $$\   $$ |      
+                                                                                                                           \$$$$$$  |                                         \$$$$$$  |      
+                                                                                                                            \______/                                           \______/       
+
+</xmp>
+
+<script>
+function copyText() {
+    const text = document.getElementById('textToCopy').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Text copied');
+        // Optional: visual feedback
+    }).catch(err => {
+        console.error('Failed to copy text:', err);
+    });
+}
+</script>
+    
+</body>
+</html>
