@@ -3,8 +3,8 @@
 
 
 
-		import { run } from '../play.core-master/src/run.js'
-		import * as program from '../play.core-master/src/programs/demos/chromaspiral.js'
+		import { run } from '/Anti-Streaming-Army/play.core-master/src/run.js'
+		import * as program from '/Anti-Streaming-Army/play.core-master/src/programs/demos/chromaspiral.js'
 		run(program, { element : document.querySelector('ascii-animation') })
     .then(function(e){
 			console.log(e)
