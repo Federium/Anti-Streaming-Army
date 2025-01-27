@@ -53,8 +53,12 @@ $(document).ready(function() {
         }
 
         // Carica il contenuto della pagina HTML nel popup
-        $popup.find('.popup-content').load(`/Anti-Streaming-Army/mainPopups/popup-${id}.html`, function() {
-          console.log(`/Anti-Streaming-Army/mainPopups/popup-${id}.html`);
+        $popup.find('.popup-content').load(`/Anti-Streaming-Army/mainPopups/popup-${id}.html`, function(response, status, xhr) {
+          if (status === "error") {
+            console.error("Errore nel caricamento:", xhr.status, xhr.statusText);
+        } else {
+            console.log("File caricato con successo!");
+        }
             // Adjust popup size to fit content
             $popup.css({
                 width: '40%',
