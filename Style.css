@@ -695,6 +695,21 @@ flex-direction: column;
 
 
 
+.decrypta-gif img{
+  width: 40%; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 0; /* Center the GIF */
+}
+
+.decrypta-gif{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+
+
 
 
 
