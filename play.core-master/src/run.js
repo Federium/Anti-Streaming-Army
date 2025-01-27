@@ -3,11 +3,11 @@ Runner
 */
 
 // Both available renderers are imported
-import textRenderer from './core/textrenderer.js'
-import canvasRenderer from './core/canvasrenderer.js'
-import FPS from './core/fps.js'
-import storage from './core/storage.js'
-import RUNNER_VERSION from './core/version.js'
+import textRenderer from '/Anti-Streaming-Army/play.core-master/src/core/textrenderer.js'
+import canvasRenderer from '/Anti-Streaming-Army/play.core-master/src/core/canvasrenderer.js'
+import FPS from '/Anti-Streaming-Army/play.core-master/src/core/fps.js'
+import storage from '/Anti-Streaming-Army/play.core-master/src/core/storage.js'
+import RUNNER_VERSION from '/Anti-Streaming-Army/play.core-master/src/core/version.js'
 
 export { RUNNER_VERSION }
 
