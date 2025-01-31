@@ -13,7 +13,7 @@ $(document).ready(function() {
         const popupContent = `
             <div class="popup ${isMobile ? 'mobile' : ''}" id="popup-${id}">
                 <div class="popup-header">
-                    <span>${id} | Decoded Output</span>
+                    <span>${id} | FILE</span>
                     <button class="close-button">[X]</button>
                 </div>
                 <div class="popup-content">
@@ -37,7 +37,9 @@ $(document).ready(function() {
 
             $popup.css({
                 top: 20 + popupOffset,
-                left: 20 + popupOffset
+                left: 20 + popupOffset,
+                width: '40%',
+                height: '70%',
             });
 
             popupOffset += 20;

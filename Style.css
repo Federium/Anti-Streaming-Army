@@ -347,6 +347,20 @@ span {
   display: none;
 }
 
+.divisoriodesktop {
+  display: block;
+}
+
+.divisoriodesktop::after {
+  content: '_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_';
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: clip;
+  font-family: 'TronicaMono', monospace;
+  color: #ffffff;
+}
+
 
 /* Collapsible Table Styles */
 .collapsible-table {
@@ -550,7 +564,7 @@ flex-direction: column;
 
 .popup {
   position: absolute;
-  width: 45%;
+  width: 40%;
   height: 35%;
   background: rgb(0, 0, 0);
   z-index: 10000;
@@ -638,6 +652,7 @@ flex-direction: column;
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */
 /* ------------------------- DECRYPTA ------------------------- */
+
 
 
 .decrypta-text {

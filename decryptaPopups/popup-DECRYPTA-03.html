@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSG-001 Details</title>
+    <link rel="stylesheet" href="PopupStyle.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+  <div class="graph-container">
+    <div class="chart-container">
+      
+      <xmp class="chart">
+                                       +-----+          
+          +----[PWR]-------------------| USB |--+          
+          |                            +-----+  |           
+          |         GND/RST2  [ ][ ]            |           
+          |       MOSI2/SCK2  [ ][ ]  A5/SCL[ ] |               
+          |          5V/MISO2 [ ][ ]  A4/SDA[ ] |            
+       .  |                             AREF[ ] |   
+       .        
+       .  |                              GND[ ] |   GND        
+       .  | [ ]N/C                    SCK/13[ ] |   BUZZER        
+       .  | [ ]IOREF                 MISO/12[ ] |   .        
+       .  | [ ]RST                   MOSI/11[ ]~|   .        
+       .  | [ ]3V3    +---+               10[ ]~|   LED_ENC        
+       .  | [ ]5v     | A |                9[ ]~|   LED_POT        
+       .  | [ ]GND   -| R |-               8[ ] |   .        
+       .  | [ ]GND   -| D |-                    |   .        
+       .  | [ ]Vin   -| U |-               7[ ] |   .         
+       .  |          -| I |-               6[ ]~|   BUTTON  
+ POT_PIN  | [ ]A0    -| N |-               5[ ]~|   USB_PIN  
+ ENC_BUT  | [ ]A1    -| O |-               4[ ] |   .        
+       .  | [ ]A2     +---+           INT1/3[ ]~|   ENC_B        
+       .  | [ ]A3                     INT0/2[ ] |   ENC_A        
+       .  | [ ]A4/SDA  RST SCK MISO     TX>1[ ] |   .        
+       .  | [ ]A5/SCL  [ ] [ ] [ ]      RX<0[ ] |   .           
+          |            [ ] [ ] [ ]              |           
+          |  UNO_R3    GND MOSI 5V  ____________/          
+           \_______________________/
+      </xmp>
+    </div>
+  </div>
+    
+</body>
+</html>
