@@ -7,9 +7,9 @@ Inspired by this shader by scry
 https://www.shadertoy.com/view/tdsyRf
 */
 
-import { map } from '/Anti-Streaming-Army/play.core-master/src/modules/num.js'
-import { sort } from '/Anti-Streaming-Army/play.core-master/src/modules/sort.js'
-import { vec2, rot, add, mulN, addN, subN, length } from '/Anti-Streaming-Army/play.core-master/src/modules/vec2.js'
+import { map } from '../../modules/num.js'
+/* import { sort } from '.sort.js' */
+import { vec2, rot, add, mulN, addN, subN, length } from '../../modules/vec2.js'
 
 const { min, sin, cos, floor } = Math
 
