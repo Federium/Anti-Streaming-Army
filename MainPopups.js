@@ -53,7 +53,7 @@ $(document).ready(function() {
         }
 
         // Carica il contenuto della pagina HTML nel popup
-        $popup.find('.popup-content').load(`/Anti-Streaming-Army/mainPopups/popup-${id}.html`, function() {
+        $popup.find('.popup-content').load(`../../mainPopups/popup-${id}.html`, function() {
 
             // Adjust popup size to fit content
             $popup.css({

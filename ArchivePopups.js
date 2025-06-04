@@ -129,7 +129,7 @@ function openAlphabetPopup() {
         'min-width': '300px'
     });
 
-    $('#popup-ALPHABET .popup-content').load('/Anti-Streaming-Army/popup-ALPHABET.html');
+    $('#popup-ALPHABET .popup-content').load('../../popup-ALPHABET.html');
     
     $('#popup-ALPHABET .close-button').click(function() {
         $('#popup-ALPHABET').remove();

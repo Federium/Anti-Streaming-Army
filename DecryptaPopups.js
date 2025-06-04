@@ -55,7 +55,7 @@ $(document).ready(function() {
             });
         }
 
-        $popup.find('.popup-content').load(`decryptaPopups/popup-${id}.html`);
+        $popup.find('.popup-content').load(`../../decryptaPopups/popup-${id}.html`);
 
         $(`#popup-${id} .close-button`).click(function() {
             $(`#popup-${id}`).remove();
